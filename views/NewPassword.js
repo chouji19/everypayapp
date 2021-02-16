@@ -26,13 +26,6 @@ const NewPassword = () => {
   const [message, setMessage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showRepeatPassword, setShowRepeatPassword] = useState(false)
-  const [showPasswordField, setShowPasswordField] = useState(false);
-  const [showValidationCode, setShowValidationCode] = useState(false);
-  const [validationCode, setValidationCode] = useState('');
-
-  const [passwordError, setPasswordError] = useState(false);
-  const [containsNumber, setContainsNumber] = useState(false);
-  const [containsLetters, setContainsLetters] = useState(false);
 
   const navigation = useNavigation();
 
@@ -65,7 +58,8 @@ const NewPassword = () => {
       }
       const res = await updateCustomerPassword(token, password);
       if (res.success) {
-        navigation.navigate('Home');
+        if (res.data.usercomplete) navigation.navigate('Home');
+        else navigation.navigate('BankAccount');
       } else {
         setMessage(res.error);
       }

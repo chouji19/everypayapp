@@ -1,43 +1,28 @@
 import React, {useState, useEffect} from 'react';
-import {View, Alert} from 'react-native';
+import {View, Alert, ScrollView} from 'react-native';
 import {
-  Form,
   Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Thumbnail,
   Text,
-  Button,
-  Icon,
-  Item,
-  Input,
-  Left,
-  Body,
-  Right,
   Title,
   Toast,
-  Picker,
-  ActionSheet,
 } from 'native-base';
-import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet, Image, TouchableOpacity} from 'react-native';
-import FooterMenu from '../components/FooterMenu';
 import LinearGradient from 'react-native-linear-gradient';
 import PaymentList from '../components/PaymentList';
 import {
   getCustomerData,
   updateCustomerStatusByUser,
   requestGetDailyPayment,
+  validateTokenBE,
 } from '../services/BEServices';
 import {formatDate} from '../utils/Utils';
 import Balance from '../components/Balance';
+import Spinner from 'react-native-loading-spinner-overlay';
 
-const Home = () => {
-  const navigation = useNavigation();
+const Home = ({navigation}) => {
+  // const navigation = useNavigation();
 
   const [budget, setBudget] = useState(0);
   const [customer, setCustomer] = useState({});
@@ -47,32 +32,48 @@ const Home = () => {
   const [message, setMessage] = useState(null);
   const [activeDailyPayments, setActiveDailyPayments] = useState(false);
   const [dailyPaymentStatus, setDailyPaymentStatus] = useState(null);
+  const [divLoading, setDivLoading] = useState(false)
 
   useEffect(() => {
     const loadInitialValues = async () => {
-      const token = await AsyncStorage.getItem('tokenCustomer');
-      if (!token) {
-        navigation.navigate('Login');
-      } else {
-        const customers = await getCustomerData(token);
-        console.log(customers.data.data.lastpayment);
-        if (customers.success) {
-          setCustomer(customers.data.data.customer);
-          setDailyPaymentStatus(
-            customers.data.data.customer.dailypaymentsactive,
-          );
-          if (customers.data.data.lastpayment)
-            setPayment(customers.data.data.lastpayment);
-          setPrevPayments(customers.data.data.previouspayments);
-          setDailyPayments(customers.data.data.dailypayments);
-          if (customers.data.data.lastpayment) {
-            formatDate(customers.data.data.lastpayment.paydate);
+      try {
+        setDivLoading(true);
+        const token = await AsyncStorage.getItem('tokenCustomer');
+        if (!token) {
+          navigation.navigate('Login');
+        } else {
+          const res = await validateTokenBE(token);
+          if (!res.success) {
+            navigation.navigate('Login');
+          }
+          const customers = await getCustomerData(token);
+          if (customers.success) {
+            setCustomer(customers.data.data.customer);
+            setDailyPaymentStatus(
+              customers.data.data.customer.dailypaymentsactive,
+            );
+            if (customers.data.data.lastpayment)
+              setPayment(customers.data.data.lastpayment);
+            else
+              setPayment({
+                metadata: { basicAmount: 0},
+                amount: 0,
+                
+              })
+            setPrevPayments(customers.data.data.previouspayments);
+            // setDailyPayments(customers.data.data.dailypayments);
+            if (customers.data.data.lastpayment) {
+              formatDate(customers.data.data.lastpayment.paydate);
+            }
           }
         }
+      } catch (error) {
+        console.log(error);
       }
+      setDivLoading(false);
     };
     loadInitialValues();
-  }, [dailyPaymentStatus]);
+  }, [dailyPaymentStatus, navigation]);
 
   const changeDailyPaymentStatus = async (status) => {
     try {
@@ -107,7 +108,8 @@ const Home = () => {
           },
           {
             text: 'OK',
-            onPress: () => changeDailyPaymentStatus(!customer.dailypaymentsactive),
+            onPress: () =>
+              changeDailyPaymentStatus(!customer.dailypaymentsactive),
           },
         ],
         {cancelable: false},
@@ -126,8 +128,6 @@ const Home = () => {
     }
   };
 
-  
-
   const logOut = async () => {
     await AsyncStorage.removeItem('token');
     navigation.navigate('Login');
@@ -141,14 +141,22 @@ const Home = () => {
     });
   };
 
-  
-
-  if (!customer) return null;
-  if (!payment) return null;
+  if (!customer || !payment) return <Spinner
+          visible={true}
+          textContent={'Loading...'}
+          textStyle={styles.spinnerTextStyle}
+        />;
 
   return (
     // <Container style={[globalStyles.container, {backgroundColor: '#3898ec'}]}>
     <Container style={[globalStyles.container, {backgroundColor: '#F4F4F4'}]}>
+      <Spinner
+          visible={divLoading}
+          textContent={'Loading...'}
+          textStyle={styles.spinnerTextStyle}
+        />
+      <ScrollView >
+
       <LinearGradient
         colors={['#091923', '#202F58']}
         style={styles.linearGradient}>
@@ -158,18 +166,18 @@ const Home = () => {
             source={require('../assets/img/everypaywhite.png')}
           />
           <View style={styles.viewHiUser}>
-            <Title style={styles.textHeadTittle}>
+            <Text style={styles.textHeadTittle}>
               Hi {customer.firstname}!
-            </Title>
-            <Title style={styles.textHeadWelcome}>
-              Welcome to the everypay app.
-            </Title>
+            </Text>
+            <Text style={styles.textHeadWelcome}>
+              Welcome to the EverydayPay app.
+            </Text>
           </View>
         </View>
       </LinearGradient>
-     <Balance customer={customer} payment={payment}/>
-     <View style={styles.maincontent}>
-        <View style={styles.viewTittle}>
+      <Balance customer={customer} payment={payment} />
+        <View style={styles.maincontent}>
+        <View style={styles.viewCont}>
           <TouchableOpacity onPress={() => navigation.navigate('Cashboost')}>
             <View style={styles.viewactions}>
               <Image
@@ -192,15 +200,19 @@ const Home = () => {
           </TouchableOpacity>
         </View>
         <Text style={styles.textActivity}>Activity</Text>
-        <PaymentList />
-      </View>
+        <PaymentList prevPayments={prevPayments} />
+        </View>
+      </ScrollView>
       {message && showAlert()}
-      <FooterMenu buttonActive={'Home'} />
+      {/* <FooterMenu buttonActive={'Home'} /> */}
     </Container>
   );
 };
 
 const styles = StyleSheet.create({
+  spinnerTextStyle: {
+    color: '#FFF'
+  },
   linearGradient: {
     height: 200,
     paddingLeft: 15,
@@ -210,7 +222,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontFamily: 'Gill Sans',
+    fontFamily: 'UniformExtraCondensed-Light',
     textAlign: 'center',
     margin: 30,
     color: '#ffffff',
@@ -227,8 +239,19 @@ const styles = StyleSheet.create({
     padding: 20,
     flex: 1,
     flexDirection: 'row',
-    marginTop: 40,
+    marginTop: 30,
     backgroundColor: 'transparent',
+    marginBottom: 0
+    // backgroundColor: 'red',
+  },
+  viewCont: {
+    height: 200,
+    padding: 20,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: 'transparent',
+    marginBottom: 10
     // backgroundColor: 'red',
   },
   image: {
@@ -237,19 +260,21 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   imageyellow: {
-    width: 130,
-    height: 130,
+    width: 100,
+    height: 100,
     marginHorizontal: 10,
   },
   textHeadTittle: {
     color: 'white',
-    fontSize: 30,
-    fontWeight: '400',
+    fontSize: 32,
+    // fontWeight: '400',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   textHeadWelcome: {
     color: '#4FB0E6',
-    fontSize: 15,
-    fontWeight: '400',
+    fontSize: 18,
+    // fontWeight: '400',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   viewHiUser: {
     marginTop: 10,
@@ -260,8 +285,8 @@ const styles = StyleSheet.create({
   viewactions: {
     backgroundColor: 'white',
     borderRadius: 15,
-    height: 180,
-    width: 150,
+    height: 150,
+    width: 120,
     marginHorizontal: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -275,12 +300,14 @@ const styles = StyleSheet.create({
   },
   textActivity: {
     color: '#5B6B79',
-    marginVertical: 5,
+    marginBottom: 10,
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   textYellowButtons: {
     color: '#5B6B79',
     fontSize: 18,
     textAlign: 'center',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
 });
 

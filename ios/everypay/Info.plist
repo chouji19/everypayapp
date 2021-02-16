@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>EveryPay</string>
+	<string>EverydayPay</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -56,6 +56,34 @@
 		<string>SimpleLineIcons.ttf</string>
 		<string>Octicons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Uniform Black.ttf</string>
+		<string>Uniform Bold.ttf</string>
+		<string>Uniform Condensed Black.ttf</string>
+		<string>Uniform Condensed Bold.ttf</string>
+		<string>Uniform Condensed Light.ttf</string>
+		<string>Uniform Condensed Medium.ttf</string>
+		<string>Uniform Condensed Ultra.ttf</string>
+		<string>Uniform Condensed.ttf</string>
+		<string>Uniform Extra Condensed Black.ttf</string>
+		<string>Uniform Extra Condensed Bold.ttf</string>
+		<string>Uniform Extra Condensed Light.ttf</string>
+		<string>Uniform Extra Condensed Medium.ttf</string>
+		<string>Uniform Extra Condensed Ultra.ttf</string>
+		<string>Uniform Extra Condensed.ttf</string>
+		<string>Uniform Light.ttf</string>
+		<string>Uniform Medium.ttf</string>
+		<string>Uniform Ultra.ttf</string>
+		<string>Uniform.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>Roboto_medium.ttf</string>
+		<string>Roboto.ttf</string>
+		<string>rubicon-icon-font.ttf</string>
+		<string>Uniform-Black.ttf</string>
+		<string>Uniform-Extra-Condensed-Ultra.ttf</string>
+		<string>Uniform-Extra-Condensed.ttf</string>
+		<string>Uniform-Light.ttf</string>
+		<string>Uniform-Medium.ttf</string>
+		<string>Uniform-Ultra.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

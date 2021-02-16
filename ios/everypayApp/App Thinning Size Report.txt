@@ -1,0 +1,169 @@
+
+App Thinning Size Report for All Variants of everypay
+
+Variant: everypay-0D03C572-79EA-4913-B0FE-0E943D732514.ipa
+Supported variant descriptors: [device: iPhone8,1, os-version: 14.0], [device: iPhone8,4, os-version: 14.0], [device: iPod9,1, os-version: 13.0], [device: iPhone8,1, os-version: 13.0], [device: iPhone8,4, os-version: 13.0], and [device: iPod9,1, os-version: 14.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-16CCC570-B81F-4CEF-9E04-5362F70FF3CB.ipa
+Supported variant descriptors: [device: iPhone9,2, os-version: 14.0], [device: iPhone12,5, os-version: 13.0], [device: iPhone9,4, os-version: 13.0], [device: iPhone10,5, os-version: 14.0], [device: iPhone13,3, os-version: 14.0], [device: iPhone11,6, os-version: 13.0], [device: iPhone11,4, os-version: 13.0], [device: iPhone9,4, os-version: 14.0], [device: iPhone10,5, os-version: 13.0], [device: iPhone13,1, os-version: 14.0], [device: iPhone12,3, os-version: 13.0], [device: iPhone13,2, os-version: 14.0], [device: iPhone11,2, os-version: 14.0], [device: iPhone10,6, os-version: 14.0], [device: iPhone10,2, os-version: 14.0], [device: iPhone10,3, os-version: 13.0], [device: iPhone12,5, os-version: 14.0], [device: iPhone11,2, os-version: 13.0], [device: iPhone9,2, os-version: 13.0], [device: iPhone12,3, os-version: 14.0], [device: iPhone10,2, os-version: 13.0], [device: iPhone10,3, os-version: 14.0], [device: iPhone10,6, os-version: 13.0], [device: iPhone11,4, os-version: 14.0], [device: iPhone11,6, os-version: 14.0], and [device: iPhone13,4, os-version: 14.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-1ACBEE0B-0401-4B0B-BA30-0B9DEFE9809F.ipa
+Supported variant descriptors: [device: iPad3,4, os-version: 10.0], [device: iPad3,5, os-version: 10.0], and [device: iPad3,6, os-version: 10.0]
+App + On Demand Resources size: 15.3 MB compressed, 24.2 MB uncompressed
+App size: 15.3 MB compressed, 24.2 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-1B3E1521-0717-4DD6-94EA-5295491B8522.ipa
+Supported variant descriptors: [device: iPhone10,4, os-version: 13.0], [device: iPhone12,8, os-version: 13.0], [device: iPhone9,1, os-version: 14.0], [device: iPhone9,3, os-version: 14.0], [device: iPhone10,4, os-version: 14.0], [device: iPhone10,1, os-version: 14.0], [device: iPhone12,8, os-version: 14.0], [device: iPhone9,1, os-version: 13.0], [device: iPhone9,3, os-version: 13.0], and [device: iPhone10,1, os-version: 13.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-1B61141E-9BC8-4F1F-9846-77BEB64CF2C7.ipa
+Supported variant descriptors: [device: iPad4,2, os-version: 12.2], [device: iPad4,1, os-version: 12.2], [device: iPad6,8, os-version: 12.2], [device: iPad4,3, os-version: 12.2], [device: iPad4,7, os-version: 12.2], [device: iPad4,8, os-version: 12.2], [device: iPad4,6, os-version: 12.2], [device: iPad4,9, os-version: 12.2], [device: iPad5,4, os-version: 12.2], [device: iPad5,1, os-version: 12.2], [device: iPad7,6, os-version: 12.2], [device: iPad6,12, os-version: 12.2], [device: iPad5,3, os-version: 12.2], [device: iPad6,11, os-version: 12.2], [device: iPad4,5, os-version: 12.2], [device: iPad7,5, os-version: 12.2], [device: iPad4,4, os-version: 12.2], [device: iPad6,7, os-version: 12.2], and [device: iPad5,2, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-247E4C04-EA6C-4E50-88AF-D0E4F0F2D01E.ipa
+Supported variant descriptors: [device: iPhone8,2, os-version: 14.0] and [device: iPhone8,2, os-version: 13.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-257278F2-94AF-4C3F-ACD4-E31D5A4B2C16.ipa
+Supported variant descriptors: [device: iPhone7,1, os-version: 10.0], [device: iPhone8,2, os-version: 10.0], [device: iPhone8,2, os-version: 12.0], and [device: iPhone7,1, os-version: 12.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-3D2DA8C4-8A2B-4E89-86CC-B429BE839898.ipa
+Supported variant descriptors: [device: iPhone11,8, os-version: 14.0], [device: iPhone12,1, os-version: 14.0], [device: iPhone12,1, os-version: 13.0], and [device: iPhone11,8, os-version: 13.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-4210E927-BAF7-4D37-A203-1F413CBDF2FD.ipa
+Supported variant descriptors: [device: iPhone11,6, os-version: 12.0], [device: iPhone10,3, os-version: 11.0], [device: iPhone9,4, os-version: 10.0], [device: iPhone10,5, os-version: 11.0], [device: iPhone10,2, os-version: 11.0], [device: iPhone11,4, os-version: 12.0], [device: iPhone10,5, os-version: 12.0], [device: iPhone10,3, os-version: 12.0], [device: iPhone9,4, os-version: 12.0], [device: iPhone10,2, os-version: 12.0], [device: iPhone9,2, os-version: 12.0], [device: iPhone10,6, os-version: 11.0], [device: iPhone10,6, os-version: 12.0], [device: iPhone9,2, os-version: 10.0], and [device: iPhone11,2, os-version: 12.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-43041A20-EDFC-4DA2-85E6-1C0CA6CBE5F1.ipa
+Supported variant descriptors: [device: iPhone11,8, os-version: 12.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-4C47ACA6-C7A3-4C28-BA05-C3E633FA2102.ipa
+Supported variant descriptors: [device: iPad11,1, os-version: 13.0], [device: iPad8,11, os-version: 13.0], [device: iPad7,4, os-version: 14.0], [device: iPad11,4, os-version: 14.0], [device: iPad6,4, os-version: 14.0], [device: iPad11,2, os-version: 13.0], [device: iPad8,12, os-version: 13.0], [device: iPad8,8, os-version: 13.0], [device: iPad8,5, os-version: 14.0], [device: iPad8,9, os-version: 14.0], [device: iPad7,1, os-version: 13.0], [device: iPad13,2, os-version: 14.0], [device: iPad6,4, os-version: 13.0], [device: iPad8,9, os-version: 13.0], [device: iPad6,3, os-version: 14.0], [device: iPad11,1, os-version: 14.0], [device: iPad8,6, os-version: 13.0], [device: iPad11,4, os-version: 13.0], [device: iPad7,3, os-version: 14.0], [device: iPad8,12, os-version: 14.0], [device: iPad8,2, os-version: 13.0], [device: iPad8,4, os-version: 13.0], [device: iPad8,5, os-version: 13.0], [device: iPad8,1, os-version: 13.0], [device: iPad8,3, os-version: 13.0], [device: iPad8,7, os-version: 13.0], [device: iPad8,1, os-version: 14.0], [device: iPad8,10, os-version: 14.0], [device: MacFamily20,1, os-version: 14.0], [device: iPad8,4, os-version: 14.0], [device: iPad6,3, os-version: 13.0], [device: iPad8,3, os-version: 14.0], [device: iPad8,7, os-version: 14.0], [device: iPad8,8, os-version: 14.0], [device: iPad8,2, os-version: 14.0], [device: iPad7,1, os-version: 14.0], [device: iPad7,4, os-version: 13.0], [device: iPad7,3, os-version: 13.0], [device: iPad11,3, os-version: 13.0], [device: iPad8,11, os-version: 14.0], [device: iPad13,1, os-version: 14.0], [device: iPad8,6, os-version: 14.0], [device: iPad8,10, os-version: 13.0], [device: iPad7,2, os-version: 14.0], [device: iPad7,2, os-version: 13.0], [device: iPad11,3, os-version: 14.0], and [device: iPad11,2, os-version: 14.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-53451F0D-9799-44DE-B69F-721323009DB5.ipa
+Supported variant descriptors: [device: iPhone6,1, os-version: 12.2], [device: iPod9,1, os-version: 12.2], [device: iPhone8,1, os-version: 12.2], [device: iPhone6,2, os-version: 12.2], [device: iPhone7,2, os-version: 12.2], [device: iPod7,1, os-version: 12.2], and [device: iPhone8,4, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-5A7D5EE6-5173-4140-AF2C-A42C10B3F331.ipa
+Supported variant descriptors: [device: iPhone9,1, os-version: 12.0], [device: iPhone10,4, os-version: 12.0], [device: iPhone9,1, os-version: 10.0], [device: iPhone9,3, os-version: 12.0], [device: iPhone9,3, os-version: 10.0], [device: iPhone10,1, os-version: 11.0], [device: iPhone10,1, os-version: 12.0], and [device: iPhone10,4, os-version: 11.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-6AF4B523-30D1-4A09-A4E6-E73BAA88FAFA.ipa
+Supported variant descriptors: [device: iPhone9,1, os-version: 12.2], [device: iPhone9,3, os-version: 12.2], [device: iPhone10,1, os-version: 12.2], and [device: iPhone10,4, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-6DC0656B-7D92-4259-B4A1-CF97FE305C24.ipa
+Supported variant descriptors: [device: iPhone10,6, os-version: 12.2], [device: iPhone10,3, os-version: 12.2], [device: iPhone11,2, os-version: 12.2], [device: iPhone9,2, os-version: 12.2], [device: iPhone9,4, os-version: 12.2], [device: iPhone11,4, os-version: 12.2], [device: iPhone10,2, os-version: 12.2], [device: iPhone11,6, os-version: 12.2], and [device: iPhone10,5, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-7BA63DEC-0ED5-43E8-9B29-CAD30556D697.ipa
+Supported variant descriptors: [device: iPhone5,1, os-version: 10.0], [device: iPhone5,3, os-version: 10.0], [device: iPhone5,2, os-version: 10.0], and [device: iPhone5,4, os-version: 10.0]
+App + On Demand Resources size: 15.3 MB compressed, 24.2 MB uncompressed
+App size: 15.3 MB compressed, 24.2 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-8FAA03C9-F099-4F57-B51D-78AC7E3A75A2.ipa
+Supported variant descriptors: [device: iPhone8,2, os-version: 12.2] and [device: iPhone7,1, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-9F2E408E-B54F-418C-8B63-FBA64E9E7B5E.ipa
+Supported variant descriptors: [device: iPad5,1, os-version: 13.0], [device: iPad5,2, os-version: 13.0], [device: iPad6,11, os-version: 13.0], [device: iPad6,7, os-version: 13.0], [device: iPad6,12, os-version: 13.0], [device: iPad6,11, os-version: 14.0], [device: iPad7,6, os-version: 14.0], [device: iPad6,7, os-version: 14.0], [device: iPad5,3, os-version: 14.0], [device: iPad5,4, os-version: 14.0], [device: iPad6,12, os-version: 14.0], [device: iPad6,8, os-version: 13.0], [device: iPad7,12, os-version: 14.0], [device: iPad7,12, os-version: 13.0], [device: iPad7,11, os-version: 13.0], [device: iPad11,6, os-version: 14.0], [device: iPad5,4, os-version: 13.0], [device: iPad7,11, os-version: 14.0], [device: iPad5,1, os-version: 14.0], [device: iPad6,8, os-version: 14.0], [device: iPad5,2, os-version: 14.0], [device: iPad7,5, os-version: 14.0], [device: iPad7,6, os-version: 13.0], [device: iPad7,5, os-version: 13.0], [device: iPad5,3, os-version: 13.0], and [device: iPad11,7, os-version: 14.0]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-A4D00E4A-A788-4432-B802-C91C2F36F690.ipa
+Supported variant descriptors: [device: iPad11,4, os-version: 12.2], [device: iPad8,1, os-version: 12.2], [device: iPad11,1, os-version: 12.2], [device: iPad6,3, os-version: 12.2], [device: iPad6,4, os-version: 12.2], [device: iPad7,3, os-version: 12.2], [device: iPad8,6, os-version: 12.2], [device: iPad8,2, os-version: 12.2], [device: iPad11,3, os-version: 12.2], [device: iPad8,4, os-version: 12.2], [device: iPad8,7, os-version: 12.2], [device: iPad7,2, os-version: 12.2], [device: iPad11,2, os-version: 12.2], [device: iPad8,8, os-version: 12.2], [device: iPad7,1, os-version: 12.2], [device: iPad8,5, os-version: 12.2], [device: iPad8,3, os-version: 12.2], and [device: iPad7,4, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-A7921E7C-8CB9-46D9-B507-EB394B1E2860.ipa
+Supported variant descriptors: [device: iPhone8,1, os-version: 10.0], [device: iPhone8,4, os-version: 10.0], [device: iPod7,1, os-version: 10.0], [device: iPhone7,2, os-version: 10.0], [device: iPhone6,1, os-version: 10.0], [device: iPhone8,4, os-version: 12.0], [device: iPhone6,1, os-version: 12.0], [device: iPhone8,1, os-version: 12.0], [device: iPhone6,2, os-version: 12.0], [device: iPhone6,2, os-version: 10.0], [device: iPod7,1, os-version: 12.0], and [device: iPhone7,2, os-version: 12.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-B3FF9A6E-FE5A-452B-987B-05FE98E59F62.ipa
+Supported variant descriptors: [device: iPad7,5, os-version: 12.0], [device: iPad4,1, os-version: 12.0], [device: iPad6,8, os-version: 10.0], [device: iPad5,4, os-version: 12.0], [device: iPad7,6, os-version: 12.0], [device: iPad4,4, os-version: 10.0], [device: iPad5,4, os-version: 10.0], [device: iPad4,5, os-version: 10.0], [device: iPad5,2, os-version: 10.0], [device: iPad6,12, os-version: 10.0], [device: iPad6,12, os-version: 12.0], [device: iPad7,6, os-version: 11.0], [device: iPad5,1, os-version: 12.0], [device: iPad4,7, os-version: 10.0], [device: iPad4,1, os-version: 10.0], [device: iPad4,8, os-version: 12.0], [device: iPad4,4, os-version: 12.0], [device: iPad4,3, os-version: 10.0], [device: iPad4,9, os-version: 10.0], [device: iPad4,3, os-version: 12.0], [device: iPad4,8, os-version: 10.0], [device: iPad6,11, os-version: 10.0], [device: iPad5,1, os-version: 10.0], [device: iPad6,8, os-version: 12.0], [device: iPad4,2, os-version: 12.0], [device: iPad4,5, os-version: 12.0], [device: iPad6,7, os-version: 10.0], [device: iPad7,5, os-version: 11.0], [device: iPad5,3, os-version: 10.0], [device: iPad4,6, os-version: 10.0], [device: iPad6,7, os-version: 12.0], [device: iPad4,9, os-version: 12.0], [device: iPad4,2, os-version: 10.0], [device: iPad5,2, os-version: 12.0], [device: iPad4,7, os-version: 12.0], [device: iPad5,3, os-version: 12.0], [device: iPad6,11, os-version: 12.0], and [device: iPad4,6, os-version: 12.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-C39260B6-9522-42D2-A3A5-EEB0F9E6F6F8.ipa
+Supported variant descriptors: [device: iPad8,7, os-version: 12.0], [device: iPad8,8, os-version: 12.0], [device: iPad6,3, os-version: 12.0], [device: iPad8,6, os-version: 12.0], [device: iPad7,1, os-version: 10.0], [device: iPad6,4, os-version: 12.0], [device: iPad7,1, os-version: 12.0], [device: iPad8,5, os-version: 12.0], [device: iPad7,3, os-version: 12.0], [device: iPad8,3, os-version: 12.0], [device: iPad7,2, os-version: 10.0], [device: iPad8,2, os-version: 12.0], [device: iPad8,4, os-version: 12.0], [device: iPad7,4, os-version: 10.0], [device: iPad7,2, os-version: 12.0], [device: iPad7,4, os-version: 12.0], [device: iPad8,1, os-version: 12.0], [device: iPad7,3, os-version: 10.0], [device: iPad6,3, os-version: 10.0], and [device: iPad6,4, os-version: 10.0]
+App + On Demand Resources size: 14.9 MB compressed, 25.6 MB uncompressed
+App size: 14.9 MB compressed, 25.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay-FB034A38-9A26-4157-9CC4-7C7FF8CB1077.ipa
+Supported variant descriptors: [device: iPhone11,8, os-version: 12.2]
+App + On Demand Resources size: 12.6 MB compressed, 18.6 MB uncompressed
+App size: 12.6 MB compressed, 18.6 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: everypay.ipa
+Supported variant descriptors: Universal
+App + On Demand Resources size: 18.9 MB compressed, 34.8 MB uncompressed
+App size: 18.9 MB compressed, 34.8 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed

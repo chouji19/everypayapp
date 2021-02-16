@@ -19,16 +19,21 @@ import {
   loginCustomerEP,
   validateCustomerEmail,
   validateCustomerCode,
-} from "../services/BEServices";
+  validateTokenBE,
+} from '../services/BEServices';
+import Spinner from 'react-native-loading-spinner-overlay';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const Login = () => {
-  const [email, setEmail] = useState('your.email+fakedata63101@gmail.com');
+  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('your.email+fakedata63101@gmail.com');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordField, setShowPasswordField] = useState(false);
   const [showValidationCode, setShowValidationCode] = useState(false);
   const [validationCode, setValidationCode] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigation = useNavigation();
 
@@ -36,7 +41,9 @@ const Login = () => {
     const checkSession = async () => {
       const token = await AsyncStorage.getItem('tokenCustomer');
       if (token) {
-        navigation.navigate('Home');
+        const res = await validateTokenBE(token);
+        if (res.success) navigation.navigate('Home');
+        else await AsyncStorage.removeItem('tokenCustomer');
       }
     };
     checkSession();
@@ -67,6 +74,7 @@ const Login = () => {
 
   async function loginHandle() {
     try {
+      setIsLoading(true);
       if (email.trim() === '' || password.trim() === '') {
         setMessage('Username and password are required');
         return;
@@ -77,7 +85,7 @@ const Login = () => {
       });
       if (res.success) {
         // if (!res.connectionvalid) navigation.navigate('Updatebankdetails');
-        // else 
+        // else
         if (res.changePassword) navigation.navigate('NewPassword');
         else navigation.navigate('Home');
       } else {
@@ -87,11 +95,11 @@ const Login = () => {
       console.error('There was an error with the login', error);
       setMessage('Error: Login failed please try again');
     }
+    setIsLoading(false);
   }
 
   async function validateCode() {
     try {
-      console.log('validating.......');
       if (!validationCode) {
         setMessage('Validation code cannot be empty');
         return;
@@ -121,83 +129,110 @@ const Login = () => {
 
   return (
     // <Container style={[globalStyles.container, {backgroundColor: '#3898ec'}]}>
-    <Container style={[globalStyles.container, {backgroundColor: '#ECFFFF'}]}>
+    <Container
+      style={[
+        globalStyles.container,
+        {backgroundColor: '#ECFFFF', marginTop: 30},
+      ]}>
+      <Spinner
+        visible={isLoading}
+        textContent={'Loading...'}
+        textStyle={globalStyles.spinnerTextStyle}
+      />
       <View style={globalStyles.content}>
-        <View style={globalStyles.containerMain}>
-          <Image
-            style={[styles.loginImage]}
-            source={require('../assets/img/EverypayLogo.png')}
-          />
-          <Text style={styles.loginTittle}>login to everypay</Text>
-        </View>
-        <Form style={styles.form}>
-          <Item inlineLabel last style={globalStyles.input} rounded>
-            <Icon active name="mail-outline" />
-            <Input
-              placeholder="Email"
-              onChangeText={(text) => setEmail(text.toLowerCase())}
-              value={email}
+        <KeyboardAwareScrollView>
+          <View style={globalStyles.containerMain}>
+            <Image
+              style={[styles.loginImage]}
+              source={require('../assets/img/EverypayLogo.png')}
             />
-          </Item>
-          {showPasswordField && (
-            <>
-              <Item inlineLabel last style={globalStyles.input} rounded>
-                <Icon active name="lock-closed-outline" />
-                <Input
-                  secureTextEntry={showPassword ? false : true}
-                  placeholder="Password"
-                  onChangeText={(texto) => setPassword(texto)}
-                />
-                <Icon
-                  active
-                  name={showPassword ? 'eye-off-outline' : 'eye-outline'}
-                  onPress={() => setShowPassword(!showPassword)}
-                  style={{marginRight: 5}}
-                />
-              </Item>
-              <View style={globalStyles.containerCenter}>
-                <Button
-                  style={styles.button}
-                  onPress={() => loginHandle()}
-                  rounded>
-                  <Text style={styles.textButton}>Sign In</Text>
-                </Button>
-              </View>
-            </>
-          )}
-          {!showPasswordField && !showValidationCode && (
-            <View style={globalStyles.containerCenter}>
-            <Button
-              style={styles.button}
-              onPress={() => emailHandle()}
-              rounded>
-              <Text style={styles.textButton}>Continue</Text>
-            </Button>
+            <Text style={styles.loginTittle}>login to EverydayPay</Text>
+            <Text style={globalStyles.textCondensedRegular}>
+              or{' '}
+              <Text
+                style={{color: '#4FB0E6', fontFamily: 'UniformExtraCondensed-Light'
+              }}
+                onPress={() => navigation.navigate('Signup')}>
+                Signup
+              </Text>
+            </Text>
           </View>
-          )}
-          {showValidationCode && (
-            <>
-              <Item inlineLabel last style={globalStyles.input} rounded>
-                <Icon active name="ellipsis-horizontal-outline" />
-                <Input
-                  // secureTextEntry={showPassword ? false : true}
-                  placeholder="Validation Code"
-                  onChangeText={(texto) => setValidationCode(texto)}
-                />
-
-              </Item>
+          <Form style={styles.form}>
+            <Item inlineLabel last style={globalStyles.input} rounded>
+              <Icon active name="mail-outline" />
+              <Input
+                placeholder="Email"
+                onChangeText={(text) => setEmail(text.toLowerCase())}
+                value={email}
+              />
+            </Item>
+            {showPasswordField && (
+              <>
+                <Item inlineLabel last style={globalStyles.input} rounded>
+                  <Icon active name="lock-closed-outline" />
+                  <Input
+                    secureTextEntry={showPassword ? false : true}
+                    placeholder="Password"
+                    onChangeText={(texto) => setPassword(texto)}
+                  />
+                  <Icon
+                    active
+                    name={showPassword ? 'eye-off-outline' : 'eye-outline'}
+                    onPress={() => setShowPassword(!showPassword)}
+                    style={{marginRight: 5}}
+                  />
+                </Item>
+                <View style={globalStyles.containerCenter}>
+                  <Button
+                    style={styles.button}
+                    onPress={() => loginHandle()}
+                    rounded>
+                    <Text style={styles.textButton}>Sign In</Text>
+                  </Button>
+                </View>
+              </>
+            )}
+            {!showPasswordField && !showValidationCode && (
               <View style={globalStyles.containerCenter}>
                 <Button
                   style={styles.button}
-                  onPress={() => validateCode()}
+                  onPress={() => emailHandle()}
                   rounded>
-                  <Text style={styles.textButton}>Validate</Text>
+                  <Text style={styles.textButton}>Continue</Text>
                 </Button>
               </View>
-            </>
-          )}
-          {message && showAlert()}
-        </Form>
+            )}
+            {showValidationCode && (
+              <>
+                <Item inlineLabel last style={globalStyles.input} rounded>
+                  <Icon active name="ellipsis-horizontal-outline" />
+                  <Input
+                    // secureTextEntry={showPassword ? false : true}
+                    placeholder="Validation Code"
+                    onChangeText={(texto) => setValidationCode(texto)}
+                  />
+                </Item>
+                <View style={globalStyles.containerCenter}>
+                  <Button
+                    style={styles.button}
+                    onPress={() => validateCode()}
+                    rounded>
+                    <Text style={styles.textButton}>Validate</Text>
+                  </Button>
+                </View>
+              </>
+            )}
+            <Text style={{textAlign: 'center', marginVertical: 5}}>
+              <Text
+                style={{color: '#4FB0E6', fontFamily: 'UniformExtraCondensed-Light'              }}
+                onPress={() => navigation.navigate('ForgotPassword')}>
+                {' '}
+                Forgot your password?{' '}
+              </Text>
+            </Text>
+            {message && showAlert()}
+          </Form>
+        </KeyboardAwareScrollView>
       </View>
     </Container>
   );
@@ -209,6 +244,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textTransform: 'uppercase',
     fontWeight: 'bold',
+    fontFamily: 'Uniform-Regular5'
   },
   form: {
     marginTop: 60,
@@ -222,11 +258,13 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     color: '#FFF',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   loginImage: {
     width: 150,
     height: 150,
-    marginHorizontal: '50%',
+    // marginHorizontal: '50%',
+    marginTop: 120,
   },
 });
 

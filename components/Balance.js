@@ -3,6 +3,8 @@ import {View} from 'react-native';
 import {Text} from 'native-base';
 import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {formatDateNoTime} from '../utils/Utils';
+import globalStyles from '../styles/global';
+
 
 const Balance = ({customer, payment}) => {
   const calculatePercentage = () => {
@@ -14,8 +16,8 @@ const Balance = ({customer, payment}) => {
   };
   return (
     <View style={styles.maincard}>
-      <View style={styles.maincardView}></View>
-      <Text style={styles.TextUpper}>Current Balance</Text>
+      {/* <View style={styles.maincardView}></View> */}
+      <Text style={styles.TextUpper} >Current Balance</Text>
       <View style={styles.progressBar}>
         <View
           style={[styles.internalBar, {width: `${calculatePercentage()}%`}]}
@@ -23,34 +25,49 @@ const Balance = ({customer, payment}) => {
       </View>
       <View style={styles.viewAvailable}>
         <View style={styles.viewAvailableContent}>
-          <Text style={{fontWeight: 'bold', textAlign: 'center'}}>
+          <Text style={{fontWeight: 'bold', textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
             {new Intl.NumberFormat('en-GB', {
               style: 'currency',
               currency: 'AUD',
             }).format(payment.metadata ? payment.metadata.basicAmount : 0)}
           </Text>
-          <Text note style={{textAlign: 'center'}}>
+          <Text note style={{textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
             Used
           </Text>
         </View>
         <View style={[styles.viewAvailableContent]}>
-          <Text style={{color: 'green', textAlign: 'center'}}>
+          <Text style={{color: 'green', textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
             {new Intl.NumberFormat('en-GB', {
               style: 'currency',
               currency: 'AUD',
             }).format(customer.budget > 0 ? customer.budget : 0)}
           </Text>
-          <Text note style={{color: 'green', textAlign: 'center'}}>
+          <Text note style={{color: 'green', textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
             Available
           </Text>
         </View>
       </View>
-      <Text
-        style={[styles.textEstRepayment, {fontWeight: 'bold', marginTop: 10}]}>
+      {/* <Text
+        style={[styles.textEstRepayment, {fontWeight: 'bold', fontFamily: 'UniformExtraCondensed-Light'}]}>
         Est. repayment on{' '}
-        <Text style={[styles.textEstRepayment, {color: '#4FB0E6'}]}>
+        <Text style={[styles.textEstRepayment, {color: '#4FB0E6', fontFamily: 'UniformExtraCondensed-Light'}]}>
+          {'2020-02-01 '}
+          <Text style={[styles.textEstRepayment, {fontWeight: 'bold', fontFamily: 'UniformExtraCondensed-Light'}]}>
+            Amount:{' '}
+            {new Intl.NumberFormat('en-GB', {
+              style: 'currency',
+              currency: 'AUD',
+            }).format(150 / 100)}
+          </Text>
+        </Text>
+      </Text> */}
+      {payment.paydate && (
+      <Text
+        style={[styles.textEstRepayment, {fontWeight: 'bold', fontFamily: 'UniformExtraCondensed-Light' }]}>
+        Est. repayment on{' '}
+        <Text style={[styles.textEstRepayment, {color: '#4FB0E6', fontFamily: 'UniformExtraCondensed-Light' }]}>
           {formatDateNoTime(payment.paydate)}{' '}
-          <Text style={[styles.textEstRepayment, {fontWeight: 'bold'}]}>
+          <Text style={[styles.textEstRepayment, {fontWeight: 'bold', fontFamily: 'UniformExtraCondensed-Light' }]}>
             Amount:{' '}
             {new Intl.NumberFormat('en-GB', {
               style: 'currency',
@@ -59,6 +76,7 @@ const Balance = ({customer, payment}) => {
           </Text>
         </Text>
       </Text>
+      )}
     </View>
   );
 };
@@ -78,7 +96,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingVertical: 15,
     paddingHorizontal: 30,
-    minHeight: 150,
   },
   card: {
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
@@ -87,7 +104,8 @@ const styles = StyleSheet.create({
   TextUpper: {
     color: '#12293E',
     textTransform: 'uppercase',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: 'Uniform-Condensed2'
   },
   progressBar: {
     height: 25,
@@ -118,20 +136,21 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     color: 'black',
-    height: 100,
+    // height: 100,
     justifyContent: 'space-around',
-    marginBottom: 40,
+    // marginBottom: 40,
   },
   viewAvailableContent: {
-    height: 70,
     color: 'blue',
     display: 'flex',
     textAlign: 'center',
+    marginBottom: 5,
   },
   textEstRepayment: {
     color: '#5B6B79',
-    fontSize: 12,
+    fontSize: 14,
     textAlign: 'center',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
 });
 

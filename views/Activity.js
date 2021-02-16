@@ -2,44 +2,47 @@ import React, {useState, useEffect} from 'react';
 import {View, Alert} from 'react-native';
 import {
   Container,
-  Text,
-  Button,
-  Icon,
-  Item,
   Title,
-  Toast,
-  Textarea,
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 import AsyncStorage from '@react-native-community/async-storage';
-import {StyleSheet, Image} from 'react-native';
-import FooterMenu from '../components/FooterMenu';
+import {StyleSheet} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {Picker} from '@react-native-community/picker';
 import PaymentList from '../components/PaymentList'
+import { validateTokenBE,getCustomerData } from '../services/BEServices';
 
 const Activity = () => {
-  const [message, setMessage] = useState(null);
 
   const navigation = useNavigation();
 
-  const handleSubmit = async () => {
-    
-    try {
-      
-    } catch (error) {
-      setMessage(error.message);
-    }
-  };
+  const [prevPayments, setPrevPayments] = useState([]);
+  const [message, setMessage] = useState(null);
 
-  const showAlert = () => {
-    Toast.show({
-      text: message,
-      buttonText: 'OK',
-      duration: 3000,
-    });
-  };
+  useEffect(() => {
+    const loadInitialValues = async () => {
+      try {
+        const token = await AsyncStorage.getItem('tokenCustomer');
+        if (!token) {
+          navigation.navigate('Login');
+        } else {
+          const res = await validateTokenBE(token);
+          if (!res.success) {
+            navigation.navigate('Login');
+          }
+          const customers = await getCustomerData(token);
+          console.log(customers.data);
+          if (customers.success) {
+            setPrevPayments(customers.data.data.previouspayments);
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadInitialValues();
+  }, []);
+
 
   return (
     // <Container style={[globalStyles.container, {backgroundColor: '#3898ec'}]}>
@@ -49,10 +52,10 @@ const Activity = () => {
         style={styles.linearGradient}></LinearGradient>
       <View style={styles.maincontent}>
         <Title style={styles.textTittle}>Activity</Title>
-        <PaymentList />
+        <PaymentList prevPayments={prevPayments} />
       </View>
 
-      <FooterMenu buttonActive={'Activity'} />
+      {/* <FooterMenu buttonActive={'Activity'} /> */}
     </Container>
   );
 };
@@ -62,15 +65,17 @@ const styles = StyleSheet.create({
     height: 130,
     paddingLeft: 15,
     paddingRight: 15,
-    borderBottomLeftRadius: 25,
-    borderBottomRightRadius: 25,
+    
   },
   maincontent: {
     flex: 1,
     backgroundColor: '#FFF',
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    marginHorizontal: '3%',
+    // marginHorizontal: '3%',
+    marginTop: -40,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
   },
   viewImage: {
     display: 'flex',
@@ -81,7 +86,10 @@ const styles = StyleSheet.create({
   textTittle: {
     color: 'black',
     fontSize: 25,
-    fontWeight: 'bold',
+    marginVertical: 10,
+    textTransform: 'uppercase',
+    // fontWeight: 'bold',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   image: {
     width: 150,

@@ -1,41 +1,40 @@
 import React, {useState, useEffect} from 'react';
-import {View, Alert, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import {
-  Form,
+  View,
+  Alert,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from 'react-native';
+
+import {
   Container,
-  Header,
-  Content,
-  Card,
-  CardItem,
-  Thumbnail,
   Text,
   Button,
   Icon,
   Item,
-  Input,
-  Left,
-  Body,
-  Right,
   Title,
   Toast,
+  // Textarea,
   Picker,
-  ActionSheet,
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 import AsyncStorage from '@react-native-community/async-storage';
-import FooterMenu from '../components/FooterMenu';
 import LinearGradient from 'react-native-linear-gradient';
+// import {Picker} from '@react-native-community/picker';
 import {createCashBoostPayment, getCustomerData} from '../services/BEServices';
-import { formatDate } from '../utils/Utils';
+import {formatDate} from '../utils/Utils';
 import Balance from '../components/Balance';
-
 
 const CashBoost = () => {
   const [message, setMessage] = useState(null);
   const [customer, setCustomer] = useState({});
   const [payment, setPayment] = useState(null);
-  const [causeRefresh, setCauseRefresh] = useState(false)
+  const [causeRefresh, setCauseRefresh] = useState(false);
+  const [amountArray, setAmountArray] = useState([]);
+  const [amountToPay, setAmountToPay] = useState('10');
 
   useEffect(() => {
     const loadInitialValues = async () => {
@@ -44,11 +43,21 @@ const CashBoost = () => {
         navigation.navigate('Login');
       } else {
         const customers = await getCustomerData(token);
-        console.log(customers.data.data.lastpayment);
         if (customers.success) {
           setCustomer(customers.data.data.customer);
-          if (customers.data.data.lastpayment)
+          let arrayData = [];
+          for (let i = 1; i <= customers.data.data.customer.budget / 10; i++) {
+            arrayData = [...arrayData, i * 10];
+          }
+          setAmountArray(arrayData);
+
+          if (customers.data.data.lastpayment) {
             setPayment(customers.data.data.lastpayment);
+          } else
+            setPayment({
+              metadata: {basicAmount: 0},
+              amount: 0,
+            });
           if (customers.data.data.lastpayment) {
             formatDate(customers.data.data.lastpayment.paydate);
           }
@@ -91,6 +100,7 @@ const CashBoost = () => {
       if (result.data.success) {
         setMessage(result.data.msg);
         setCauseRefresh(!causeRefresh);
+        // navigation.navigate('Home', {refresh: true})
       } else {
         setMessage(
           'There was not possible to create the payment, verify you have enough budget to make the cash boost request',
@@ -110,66 +120,119 @@ const CashBoost = () => {
   if (!customer) return null;
   if (!payment) return null;
 
+  // const getPickerAmount = () => {
+  //   return <Picker>
+  //         {for(let i = 0; i < customer.amount/10; i++) {
+
+  //         }}
+  //   </Picker>
+
+  // }
+
   return (
     // <Container style={[globalStyles.container, {backgroundColor: '#3898ec'}]}>
-    <Container style={[globalStyles.container, {backgroundColor: '#F4F4F4'}]}>
-      <LinearGradient
-        colors={['#091923', '#202F58']}
-        style={styles.linearGradient}>
-        <View style={styles.viewTittle}>
-          <Image
-            style={[styles.image]}
-            source={require('../assets/img/everypaywhite.png')}
-          />
-          <View style={styles.viewHiUser}>
-            <Title style={styles.textHeadTittle}>Hi Rok!</Title>
-            <Title style={styles.textHeadWelcome}>
-              Welcome to the everypay app.
-            </Title>
-          </View>
-        </View>
-      </LinearGradient>
-      <Balance customer={customer} payment={payment}/>
-      <View style={styles.maincontent}>
-        <View style={[globalStyles.containerCenter, {marginTop: 30}]}>
-          <Image
-            style={[styles.imageyellow]}
-            source={require('../assets/img/cashboostyellow.png')}
-          />
-          <Title style={styles.textTittle}>request cash boost</Title>
-        </View>
-        <View style={styles.viewReqTittle}>
-          <TouchableOpacity onPress={() => handleCashBoostSubmit(20)}>
-            <View style={styles.viewactions}>
-              <Text style={styles.textYellowButtons}>$20</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleCashBoostSubmit(50)}>
-            <View style={styles.viewactions}>
-              <Text style={styles.textYellowButtons}>$50</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => handleCashBoostSubmit(100)}>
-            <View style={styles.viewactions}>
-              <Text style={styles.textYellowButtons}>$100</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={globalStyles.contentHome}>
-          <Text note style={{textAlign: 'center', marginBottom: 10}}>
-            The money will be depositated in your XX Bank account
-          </Text>
-          <View style={globalStyles.containerCenter}>
+    <Container style={[globalStyles.container, {backgroundColor: '#FFF'}]}>
+      <ScrollView>
+        <LinearGradient
+          colors={['#091923', '#202F58']}
+          style={styles.linearGradient}>
+          <View style={styles.viewTittle}>
             <Image
-              style={[styles.imageeverypay]}
-              source={require('../assets/img/everypay_logo.png')}
+              style={[styles.image]}
+              source={require('../assets/img/everypaywhite.png')}
             />
+            <View style={styles.viewHiUser}>
+              <Title style={styles.textHeadTittle}>
+                Hi {customer.firstname}!
+              </Title>
+              <Title style={styles.textHeadWelcome}>
+                Welcome to the EverydayPay app.
+              </Title>
+            </View>
+          </View>
+        </LinearGradient>
+        <Balance customer={customer} payment={payment} />
+        <View style={styles.maincontent}>
+          <View style={[globalStyles.containerCenter, {marginTop: 30}]}>
+            <Image
+              style={[styles.imageyellow]}
+              source={require('../assets/img/cashboostyellow.png')}
+            />
+            <Title style={styles.textTittle}>request cash boost</Title>
+          </View>
+          <View style={styles.viewReqTittle}>
+            <TouchableOpacity onPress={() => handleCashBoostSubmit(20)}>
+              <View style={styles.viewactions}>
+                <Text style={styles.textYellowButtons}>$20</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => handleCashBoostSubmit(50)}>
+              <View style={styles.viewactions}>
+                <Text style={styles.textYellowButtons}>$50</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => handleCashBoostSubmit(100)}>
+              <View style={styles.viewactions}>
+                <Text style={styles.textYellowButtons}>$100</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          {amountArray && (
+            <>
+              <Text style={{textAlign: 'center', marginTop: 5, fontFamily: 'Uniform-Condensed5'  }}>
+                CashBoost different amount:
+              </Text>
+
+              <Picker
+                mode="dropdown"
+                iosHeader="Amount"
+                value={amountToPay}
+                style={globalStyles.combobox}
+                iosIcon={
+                  <Icon
+                    name="chevron-down-circle"
+                    style={{color: '#000', fontSize: 25}}
+                  />
+                }
+                selectedValue={amountToPay}
+                onValueChange={(e) => setAmountToPay(e)}>
+                {/* {getPickerAmount()} */}
+                {amountArray &&
+                  amountArray.map((amount) => (
+                    <Picker.Item
+                      label={`${amount}`}
+                      value={`${amount}`}
+                      key={`(${amount})`}
+                    />
+                  ))}
+              </Picker>
+            </>
+          )}
+
+          <View style={globalStyles.containerCenter}>
+            <Button
+              style={styles.button}
+              onPress={() => handleCashBoostSubmit(amountToPay)}
+              rounded>
+              <Text style={styles.textButton}>Request</Text>
+            </Button>
+          </View>
+          <View style={globalStyles.contentHome}>
+            {/* <Text note style={{textAlign: 'center', marginBottom: 10}}>
+            The money will be depositated in your XX Bank account
+          </Text> */}
+            <View style={globalStyles.containerCenter}>
+              <Image
+                style={[styles.imageeverypay]}
+                source={require('../assets/img/everypay_logo.png')}
+              />
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
       {message && showAlert()}
 
-      <FooterMenu buttonActive={'Cashboost'} />
+      {/* <FooterMenu buttonActive={'Cashboost'} /> */}
     </Container>
   );
 };
@@ -256,10 +319,12 @@ const styles = StyleSheet.create({
     // backgroundColor: 'red',
   },
   viewReqTittle: {
-    padding: 20,
+    padding: 10,
     flex: 1,
     flexDirection: 'row',
     backgroundColor: 'transparent',
+    alignItems: 'center',
+    justifyContent: 'center',
     // backgroundColor: 'red',
   },
   viewAvailable: {
@@ -307,11 +372,11 @@ const styles = StyleSheet.create({
   },
   viewactions: {
     backgroundColor: 'white',
-    borderRadius: 40,
-    height: 100,
-    width: 100,
+    borderRadius: 15,
+    height: 80,
+    width: 80,
     backgroundColor: '#FFDD61',
-    marginHorizontal: 10,
+    marginHorizontal: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -321,6 +386,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     textAlign: 'center',
     fontWeight: 'bold',
+    fontFamily: 'Uniform-Condensed5' 
+    
   },
   textEstRepayment: {
     color: '#5B6B79',
@@ -333,6 +400,8 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     textTransform: 'uppercase',
+    fontFamily: 'Uniform-Condensed5' 
+
   },
   viewIntFooter: {
     flex: 1,
@@ -340,6 +409,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: '2.5%',
+  },
+  button: {
+    backgroundColor: '#FFDD5F',
+    marginTop: 20,
+    paddingHorizontal: 10,
+  },
+  textButton: {
+    textTransform: 'uppercase',
+    color: '#FFF',
+    fontFamily: 'Uniform-Condensed5' 
   },
 });
 

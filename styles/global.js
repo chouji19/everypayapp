@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   content: {
     flexDirection: 'column',
@@ -94,7 +95,30 @@ const globalStyles = StyleSheet.create({
     backgroundColor: '#13293D',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-  }
+  },
+  spinnerTextStyle: {
+    color: '#FFF'
+  },
+  textCondensedRegular: {
+    fontFamily: 'UniformExtraCondensed-Light'
+  },
+  textRegular: {
+    fontFamily: 'Uniform-Regular4'
+  },
+  textBold: {
+    fontFamily: 'Uniform-ExtraCondensed2'
+  },
+  combobox: {
+    height: 50,
+    fontSize: 30,
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    marginVertical: 20,
+    width: '100%',
+    borderColor: '#e1e1e1',
+    borderWidth: 1,
+    borderRadius: 10,
+  },
 });
 
 export default globalStyles;

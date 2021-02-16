@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* everypayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* everypayTests.m */; };
+		0A823922A224490DA92ED1DE /* Uniform Extra Condensed Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8387EC337288495F81D924B1 /* Uniform Extra Condensed Black.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -15,10 +16,30 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* everypayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* everypayTests.m */; };
+		2F20FBE17F0246E3890788DF /* Uniform Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9838033A0D040A8B59AC26A /* Uniform Condensed.ttf */; };
 		343A24E4EB97A27C245C68A1 /* libPods-everypay-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CF6A7EED63DA8F0CEC978E /* libPods-everypay-tvOSTests.a */; };
+		35C77BEA3FDF4AEBA76A81EB /* Uniform Extra Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B639D9D9088740B391F77487 /* Uniform Extra Condensed Medium.ttf */; };
+		36C8319986AD473E82124FC1 /* Uniform Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80236FCA84644E8E8BC24676 /* Uniform Light.ttf */; };
+		3D1C1FDD0E5F48399CC6F055 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE67DAF5CBCA4A2FB5D58014 /* Roboto.ttf */; };
+		57226DA735F04BE8B6149ACB /* Uniform Condensed Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D551415B76DB49F28AC22727 /* Uniform Condensed Light.ttf */; };
+		575161AD735A48C787967468 /* Uniform Extra Condensed Ultra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D22B0751A4248EEAC2A720B /* Uniform Extra Condensed Ultra.ttf */; };
+		67B9F876F131424E95A9CBAD /* Uniform Condensed Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A4C84D994954300AAAF60FE /* Uniform Condensed Black.ttf */; };
+		7BEF0FD0815D4AD7AA74FBD5 /* Uniform Extra Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 612E746FDD4A45D0A9230C4B /* Uniform Extra Condensed Bold.ttf */; };
+		804FC77A01004838A68979E0 /* Uniform Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3A047EB0763B4DA88153F37E /* Uniform Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8D6F267CAA4E47FD8D7776CE /* Uniform.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DAC891AFC2AF4A09957587C0 /* Uniform.ttf */; };
+		8F5A94ECFC674BE9BBB7982A /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FBCA9B840454E1E96049CD7 /* Roboto_medium.ttf */; };
+		B90D3EBF4BC34EAC84ACF536 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1080A2E3795A438585DC77E9 /* rubicon-icon-font.ttf */; };
+		C515E8AABB1941C8A48CCC63 /* Uniform Extra Condensed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 940B07FE322247A3ADBD4C2B /* Uniform Extra Condensed.ttf */; };
+		C5A6CC2F20B64822889732D0 /* Uniform Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1015C0F0C871456E8A96768B /* Uniform Medium.ttf */; };
 		C88DF58508816B711AD14583 /* libPods-everypay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD8C436B10814978341B348 /* libPods-everypay.a */; };
+		C976E290FA904AEC9BB760C1 /* Uniform Ultra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D5DE03C1B024EC7A9F12EEA /* Uniform Ultra.ttf */; };
 		DA143FCD66D091AB698E97E4 /* libPods-everypay-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F017179391B8B1290FC98B9 /* libPods-everypay-tvOS.a */; };
+		E3C563568CF24136B07A35E5 /* Uniform Extra Condensed Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6B019ACF7D7489E90B94E07 /* Uniform Extra Condensed Light.ttf */; };
+		E53BE939D1854F24896C4BCE /* Uniform Condensed Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34C36554738F43358BDFC36E /* Uniform Condensed Bold.ttf */; };
+		E88CB36DC6EB4B7D8679BB7C /* Uniform Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAF6D3AD62D948DC9BCFF406 /* Uniform Bold.ttf */; };
+		F5E9A9805C7B46F992BEB89A /* Uniform Condensed Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA7F4D3EE72F47089B5AF17B /* Uniform Condensed Medium.ttf */; };
+		FC65CDDDBD94400A917CC595 /* Uniform Condensed Ultra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C772B4F440D44A9ABFE7FC25 /* Uniform Condensed Ultra.ttf */; };
 		FDDC53D45D6FA12CCBDB1B25 /* libPods-everypay-everypayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FFE5B1956FC373FC26BDCAD /* libPods-everypay-everypayTests.a */; };
 /* End PBXBuildFile section */
 
@@ -46,26 +67,69 @@
 		00E356F21AD99517003FC87E /* everypayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = everypayTests.m; sourceTree = "<group>"; };
 		02CF6A7EED63DA8F0CEC978E /* libPods-everypay-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-everypay-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0424F916EA314B4A5E450A58 /* Pods-everypay-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-everypay-tvOSTests/Pods-everypay-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0D5DE03C1B024EC7A9F12EEA /* Uniform Ultra.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Ultra.ttf"; path = "../assets/fonts/Uniform Ultra.ttf"; sourceTree = "<group>"; };
 		0F017179391B8B1290FC98B9 /* libPods-everypay-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-everypay-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FBCA9B840454E1E96049CD7 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		0FFE5B1956FC373FC26BDCAD /* libPods-everypay-everypayTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-everypay-everypayTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1015C0F0C871456E8A96768B /* Uniform Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Medium.ttf"; path = "../assets/fonts/Uniform Medium.ttf"; sourceTree = "<group>"; };
+		1080A2E3795A438585DC77E9 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* everypay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = everypay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = everypay/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = everypay/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = everypay/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = everypay/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = everypay/main.m; sourceTree = "<group>"; };
+		13B3D615A57D467EA22774C0 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		1C29B0F8808B40AFB67D29A6 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		1C8F4846A2EE428DB4A4409E /* Uniform-Ultra.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform-Ultra.ttf"; path = "../assets/fonts/Uniform-Ultra.ttf"; sourceTree = "<group>"; };
+		217F94979CFF49C2B04A21A6 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* everypay-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "everypay-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* everypay-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "everypay-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C36554738F43358BDFC36E /* Uniform Condensed Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Condensed Bold.ttf"; path = "../assets/fonts/Uniform Condensed Bold.ttf"; sourceTree = "<group>"; };
+		3647567D43FE4F1DACFD20EC /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		3A047EB0763B4DA88153F37E /* Uniform Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Black.ttf"; path = "../assets/fonts/Uniform Black.ttf"; sourceTree = "<group>"; };
+		3FCFFEEA483A4AA1A28C67F7 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		4A78ADFF268E45919F069CA7 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		4D22B0751A4248EEAC2A720B /* Uniform Extra Condensed Ultra.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Extra Condensed Ultra.ttf"; path = "../assets/fonts/Uniform Extra Condensed Ultra.ttf"; sourceTree = "<group>"; };
 		60971DC6BB5DCCABCE535298 /* Pods-everypay-everypayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay-everypayTests.release.xcconfig"; path = "Target Support Files/Pods-everypay-everypayTests/Pods-everypay-everypayTests.release.xcconfig"; sourceTree = "<group>"; };
+		612E746FDD4A45D0A9230C4B /* Uniform Extra Condensed Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Extra Condensed Bold.ttf"; path = "../assets/fonts/Uniform Extra Condensed Bold.ttf"; sourceTree = "<group>"; };
+		63A57A4823FC408E8B996731 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		65DB95845EA34ABE9B1D333A /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/native-base/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		6C99280E0C8A48C8AB886D58 /* Uniform-Extra-Condensed.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform-Extra-Condensed.ttf"; path = "../assets/fonts/Uniform-Extra-Condensed.ttf"; sourceTree = "<group>"; };
 		6F3A68CD757ECD93C1480596 /* Pods-everypay-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-everypay-tvOS/Pods-everypay-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		78C017B00C2243F9BAFCBB37 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		80236FCA84644E8E8BC24676 /* Uniform Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Light.ttf"; path = "../assets/fonts/Uniform Light.ttf"; sourceTree = "<group>"; };
+		811B78CE06EB4B39BD829247 /* Uniform-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform-Light.ttf"; path = "../assets/fonts/Uniform-Light.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = everypay/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		81B399287C9C4FFA8EA53A21 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		8387EC337288495F81D924B1 /* Uniform Extra Condensed Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Extra Condensed Black.ttf"; path = "../assets/fonts/Uniform Extra Condensed Black.ttf"; sourceTree = "<group>"; };
+		8A4C84D994954300AAAF60FE /* Uniform Condensed Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Condensed Black.ttf"; path = "../assets/fonts/Uniform Condensed Black.ttf"; sourceTree = "<group>"; };
+		92458E44DBD848D19D5FA4D8 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		940B07FE322247A3ADBD4C2B /* Uniform Extra Condensed.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Extra Condensed.ttf"; path = "../assets/fonts/Uniform Extra Condensed.ttf"; sourceTree = "<group>"; };
+		A6B019ACF7D7489E90B94E07 /* Uniform Extra Condensed Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Extra Condensed Light.ttf"; path = "../assets/fonts/Uniform Extra Condensed Light.ttf"; sourceTree = "<group>"; };
+		ACA4A5C0A3CB4AF0968B24DF /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		B639D9D9088740B391F77487 /* Uniform Extra Condensed Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Extra Condensed Medium.ttf"; path = "../assets/fonts/Uniform Extra Condensed Medium.ttf"; sourceTree = "<group>"; };
+		BE67DAF5CBCA4A2FB5D58014 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
+		C772B4F440D44A9ABFE7FC25 /* Uniform Condensed Ultra.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Condensed Ultra.ttf"; path = "../assets/fonts/Uniform Condensed Ultra.ttf"; sourceTree = "<group>"; };
 		C934FD2B02EA95A053ABBE43 /* Pods-everypay-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-everypay-tvOSTests/Pods-everypay-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9838033A0D040A8B59AC26A /* Uniform Condensed.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Condensed.ttf"; path = "../assets/fonts/Uniform Condensed.ttf"; sourceTree = "<group>"; };
 		CE6670F5DEEFC6BC6AAF610A /* Pods-everypay-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay-tvOS.release.xcconfig"; path = "Target Support Files/Pods-everypay-tvOS/Pods-everypay-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		CEF6B57796EE4491B755723B /* Uniform-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform-Black.ttf"; path = "../assets/fonts/Uniform-Black.ttf"; sourceTree = "<group>"; };
+		CEF7E843F97A4947B1C16C4D /* Uniform-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform-Medium.ttf"; path = "../assets/fonts/Uniform-Medium.ttf"; sourceTree = "<group>"; };
+		D44F043E78D04D529B180BE0 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		D551415B76DB49F28AC22727 /* Uniform Condensed Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Condensed Light.ttf"; path = "../assets/fonts/Uniform Condensed Light.ttf"; sourceTree = "<group>"; };
+		D60B1C94475B44608EA612F6 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		D90F318B35FF2C412CDFABF0 /* Pods-everypay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay.debug.xcconfig"; path = "Target Support Files/Pods-everypay/Pods-everypay.debug.xcconfig"; sourceTree = "<group>"; };
+		DA7F4D3EE72F47089B5AF17B /* Uniform Condensed Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Condensed Medium.ttf"; path = "../assets/fonts/Uniform Condensed Medium.ttf"; sourceTree = "<group>"; };
+		DAC891AFC2AF4A09957587C0 /* Uniform.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Uniform.ttf; path = ../assets/fonts/Uniform.ttf; sourceTree = "<group>"; };
+		DC0E3C367BEF40BBA7617556 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		DEC5136B63216542956A6CA5 /* Pods-everypay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay.release.xcconfig"; path = "Target Support Files/Pods-everypay/Pods-everypay.release.xcconfig"; sourceTree = "<group>"; };
 		E0C14E886E3891F949CF28D3 /* Pods-everypay-everypayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-everypay-everypayTests.debug.xcconfig"; path = "Target Support Files/Pods-everypay-everypayTests/Pods-everypay-everypayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC35D76E64924E32A997F0E9 /* Uniform-Extra-Condensed-Ultra.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform-Extra-Condensed-Ultra.ttf"; path = "../assets/fonts/Uniform-Extra-Condensed-Ultra.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F1A049325E25489E949B80FB /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		FAF6D3AD62D948DC9BCFF406 /* Uniform Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Uniform Bold.ttf"; path = "../assets/fonts/Uniform Bold.ttf"; sourceTree = "<group>"; };
 		FCD8C436B10814978341B348 /* libPods-everypay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-everypay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,6 +229,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A67CA80239BEC3DE895C5DDD /* Pods */,
+				8568DCD741D546A98E0530D1 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -180,6 +245,56 @@
 				2D02E4901E0B4A5D006451C7 /* everypay-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8568DCD741D546A98E0530D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3A047EB0763B4DA88153F37E /* Uniform Black.ttf */,
+				FAF6D3AD62D948DC9BCFF406 /* Uniform Bold.ttf */,
+				8A4C84D994954300AAAF60FE /* Uniform Condensed Black.ttf */,
+				34C36554738F43358BDFC36E /* Uniform Condensed Bold.ttf */,
+				D551415B76DB49F28AC22727 /* Uniform Condensed Light.ttf */,
+				DA7F4D3EE72F47089B5AF17B /* Uniform Condensed Medium.ttf */,
+				C772B4F440D44A9ABFE7FC25 /* Uniform Condensed Ultra.ttf */,
+				C9838033A0D040A8B59AC26A /* Uniform Condensed.ttf */,
+				8387EC337288495F81D924B1 /* Uniform Extra Condensed Black.ttf */,
+				612E746FDD4A45D0A9230C4B /* Uniform Extra Condensed Bold.ttf */,
+				A6B019ACF7D7489E90B94E07 /* Uniform Extra Condensed Light.ttf */,
+				B639D9D9088740B391F77487 /* Uniform Extra Condensed Medium.ttf */,
+				4D22B0751A4248EEAC2A720B /* Uniform Extra Condensed Ultra.ttf */,
+				940B07FE322247A3ADBD4C2B /* Uniform Extra Condensed.ttf */,
+				80236FCA84644E8E8BC24676 /* Uniform Light.ttf */,
+				1015C0F0C871456E8A96768B /* Uniform Medium.ttf */,
+				0D5DE03C1B024EC7A9F12EEA /* Uniform Ultra.ttf */,
+				DAC891AFC2AF4A09957587C0 /* Uniform.ttf */,
+				1C29B0F8808B40AFB67D29A6 /* AntDesign.ttf */,
+				92458E44DBD848D19D5FA4D8 /* Entypo.ttf */,
+				D44F043E78D04D529B180BE0 /* EvilIcons.ttf */,
+				13B3D615A57D467EA22774C0 /* Feather.ttf */,
+				63A57A4823FC408E8B996731 /* FontAwesome.ttf */,
+				217F94979CFF49C2B04A21A6 /* FontAwesome5_Brands.ttf */,
+				D60B1C94475B44608EA612F6 /* FontAwesome5_Regular.ttf */,
+				3647567D43FE4F1DACFD20EC /* FontAwesome5_Solid.ttf */,
+				65DB95845EA34ABE9B1D333A /* Fontisto.ttf */,
+				3FCFFEEA483A4AA1A28C67F7 /* Foundation.ttf */,
+				ACA4A5C0A3CB4AF0968B24DF /* Ionicons.ttf */,
+				81B399287C9C4FFA8EA53A21 /* MaterialCommunityIcons.ttf */,
+				4A78ADFF268E45919F069CA7 /* MaterialIcons.ttf */,
+				DC0E3C367BEF40BBA7617556 /* Octicons.ttf */,
+				0FBCA9B840454E1E96049CD7 /* Roboto_medium.ttf */,
+				BE67DAF5CBCA4A2FB5D58014 /* Roboto.ttf */,
+				1080A2E3795A438585DC77E9 /* rubicon-icon-font.ttf */,
+				78C017B00C2243F9BAFCBB37 /* SimpleLineIcons.ttf */,
+				F1A049325E25489E949B80FB /* Zocial.ttf */,
+				CEF6B57796EE4491B755723B /* Uniform-Black.ttf */,
+				EC35D76E64924E32A997F0E9 /* Uniform-Extra-Condensed-Ultra.ttf */,
+				6C99280E0C8A48C8AB886D58 /* Uniform-Extra-Condensed.ttf */,
+				811B78CE06EB4B39BD829247 /* Uniform-Light.ttf */,
+				CEF7E843F97A4947B1C16C4D /* Uniform-Medium.ttf */,
+				1C8F4846A2EE428DB4A4409E /* Uniform-Ultra.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		A67CA80239BEC3DE895C5DDD /* Pods */ = {
@@ -342,6 +457,27 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				804FC77A01004838A68979E0 /* Uniform Black.ttf in Resources */,
+				E88CB36DC6EB4B7D8679BB7C /* Uniform Bold.ttf in Resources */,
+				67B9F876F131424E95A9CBAD /* Uniform Condensed Black.ttf in Resources */,
+				E53BE939D1854F24896C4BCE /* Uniform Condensed Bold.ttf in Resources */,
+				57226DA735F04BE8B6149ACB /* Uniform Condensed Light.ttf in Resources */,
+				F5E9A9805C7B46F992BEB89A /* Uniform Condensed Medium.ttf in Resources */,
+				FC65CDDDBD94400A917CC595 /* Uniform Condensed Ultra.ttf in Resources */,
+				2F20FBE17F0246E3890788DF /* Uniform Condensed.ttf in Resources */,
+				0A823922A224490DA92ED1DE /* Uniform Extra Condensed Black.ttf in Resources */,
+				7BEF0FD0815D4AD7AA74FBD5 /* Uniform Extra Condensed Bold.ttf in Resources */,
+				E3C563568CF24136B07A35E5 /* Uniform Extra Condensed Light.ttf in Resources */,
+				35C77BEA3FDF4AEBA76A81EB /* Uniform Extra Condensed Medium.ttf in Resources */,
+				575161AD735A48C787967468 /* Uniform Extra Condensed Ultra.ttf in Resources */,
+				C515E8AABB1941C8A48CCC63 /* Uniform Extra Condensed.ttf in Resources */,
+				36C8319986AD473E82124FC1 /* Uniform Light.ttf in Resources */,
+				C5A6CC2F20B64822889732D0 /* Uniform Medium.ttf in Resources */,
+				C976E290FA904AEC9BB760C1 /* Uniform Ultra.ttf in Resources */,
+				8D6F267CAA4E47FD8D7776CE /* Uniform.ttf in Resources */,
+				8F5A94ECFC674BE9BBB7982A /* Roboto_medium.ttf in Resources */,
+				3D1C1FDD0E5F48399CC6F055 /* Roboto.ttf in Resources */,
+				B90D3EBF4BC34EAC84ACF536 /* rubicon-icon-font.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +511,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		030C7F68F8DB41231C0DFB94 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -724,6 +860,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = everypay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -745,8 +882,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Q2MH9DYGA;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = everypay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
