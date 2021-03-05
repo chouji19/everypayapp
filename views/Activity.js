@@ -31,7 +31,6 @@ const Activity = () => {
             navigation.navigate('Login');
           }
           const customers = await getCustomerData(token);
-          console.log(customers.data);
           if (customers.success) {
             setPrevPayments(customers.data.data.previouspayments);
           }
@@ -89,6 +88,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     textTransform: 'uppercase',
     // fontWeight: 'bold',
+    textAlign: 'center',
     fontFamily: 'UniformExtraCondensed-Light'
   },
   image: {

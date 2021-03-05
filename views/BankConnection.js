@@ -23,7 +23,6 @@ const User = () => {
 
   const navigation = useNavigation();
 
-  const [customer, setCustomer] = useState({});
 
   useEffect(() => {
     const loadInitialValues = async () => {
@@ -33,6 +32,7 @@ const User = () => {
           navigation.navigate('Login');
         } else {
           const bank = await AsyncStorage.getItem('bank');
+          // console.log({bank})
           setBankSelected(JSON.parse(bank));
           // console.log(JSON.parse(bank));
           // console.log(JSON.parse(bank).logo.links.square);
@@ -96,41 +96,8 @@ const User = () => {
         <LinearGradient
           colors={['#091923', '#202F58']}
           style={styles.linearGradient}></LinearGradient>
-        <ScrollView contentContainerStyle={styles.maincontent}>
-          <View style={globalStyles.containerMain}>
-            {/* {bankSelected.logo.links.square.indexOf('.svg') === -1 ? (
-            <Image
-              style={[styles.bankImg]}
-              source={{
-                uri:
-                  'https://figtreegrove.com.au/uploads/images/ANZ_Logo_480_x_480.jpg',
-              }}
-            />
-          ) : (
-            <SvgUri
-              width="150"
-              height="150"
-              style={[styles.bankImg]}
-              source={{
-                uri:
-                bankSelected.logo.links.square,
-              }}
-
-              // source={{uri: bankSelected.logo.links.square}}
-            />
-          //   <SvgUri
-          //   width="150"
-          //   height="150"
-          //   style={[styles.bankImg]}
-          //   source={{
-          //     uri:
-          //       'https://upload.wikimedia.org/wikipedia/commons/c/c2/ANZ-Logo-2009.svg',
-          //   }}
-
-          //   // source={{uri: bankSelected.logo.links.square}}
-          // />
-          )} */}
-
+        <View style={styles.maincontent}>
+          <View style={styles.containerMainTitle}>
             <Text style={styles.title}>{bankSelected.name}</Text>
           </View>
           {/* <ScrollView> */}
@@ -217,7 +184,7 @@ const User = () => {
             </Form>
           </View>
           {/* </ScrollView> */}
-        </ScrollView>
+        </View>
       </KeyboardAwareScrollView>
       <View style={globalStyles.containerCenter}>
         <Button
@@ -237,30 +204,32 @@ const styles = StyleSheet.create({
     color: '#13293D',
     fontSize: 25,
     marginVertical: 5,
-    marginTop: 20,
+    marginTop: 30,
     textTransform: 'uppercase',
-    fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'Uniform-Regular5',
+    backgroundColor: 'white',
   },
   linearGradient: {
     height: 130,
     paddingLeft: 15,
     paddingRight: 15,
-    borderBottomLeftRadius: 25,
-    borderBottomRightRadius: 25,
   },
   maincontent: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    marginHorizontal: '3%',
+    // marginHorizontal: '3%',
+    marginTop: -40,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
   },
   viewTittle: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 30,
+    backgroundColor: 'white',
   },
   textTittle: {
     color: '#54B1E4',
@@ -305,6 +274,15 @@ const styles = StyleSheet.create({
   },
   form: {
     // marginTop: 60,
+  },
+  containerMainTitle: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    backgroundColor: 'white',
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
   },
 });
 

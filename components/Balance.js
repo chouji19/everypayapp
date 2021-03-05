@@ -1,12 +1,14 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Text} from 'native-base';
+import {Text, Button} from 'native-base';
 import {StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {formatDateNoTime} from '../utils/Utils';
 import globalStyles from '../styles/global';
-
+import {useNavigation} from '@react-navigation/native';
 
 const Balance = ({customer, payment}) => {
+  const navigation = useNavigation();
+
   const calculatePercentage = () => {
     let total =
       (Number(payment.metadata.basicAmount) || 0) +
@@ -15,9 +17,12 @@ const Balance = ({customer, payment}) => {
     return calc;
   };
   return (
-    <View style={styles.maincard}>
+    <View
+      style={
+        Platform.OS === 'android' ? styles.maincardAndroid : styles.maincard
+      }>
       {/* <View style={styles.maincardView}></View> */}
-      <Text style={styles.TextUpper} >Current Balance</Text>
+      <Text style={styles.TextUpper}>Current Balance</Text>
       <View style={styles.progressBar}>
         <View
           style={[styles.internalBar, {width: `${calculatePercentage()}%`}]}
@@ -25,24 +30,45 @@ const Balance = ({customer, payment}) => {
       </View>
       <View style={styles.viewAvailable}>
         <View style={styles.viewAvailableContent}>
-          <Text style={{fontWeight: 'bold', textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
+          <Text
+            style={{
+              fontWeight: 'bold',
+              textAlign: 'center',
+              fontFamily: 'UniformExtraCondensed-Light',
+            }}>
             {new Intl.NumberFormat('en-GB', {
               style: 'currency',
               currency: 'AUD',
             }).format(payment.metadata ? payment.metadata.basicAmount : 0)}
           </Text>
-          <Text note style={{textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
+          <Text
+            note
+            style={{
+              textAlign: 'center',
+              fontFamily: 'UniformExtraCondensed-Light',
+            }}>
             Used
           </Text>
         </View>
         <View style={[styles.viewAvailableContent]}>
-          <Text style={{color: 'green', textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
+          <Text
+            style={{
+              color: 'green',
+              textAlign: 'center',
+              fontFamily: 'UniformExtraCondensed-Light',
+            }}>
             {new Intl.NumberFormat('en-GB', {
               style: 'currency',
               currency: 'AUD',
             }).format(customer.budget > 0 ? customer.budget : 0)}
           </Text>
-          <Text note style={{color: 'green', textAlign: 'center', fontFamily: 'UniformExtraCondensed-Light'}}>
+          <Text
+            note
+            style={{
+              color: 'green',
+              textAlign: 'center',
+              fontFamily: 'UniformExtraCondensed-Light',
+            }}>
             Available
           </Text>
         </View>
@@ -62,20 +88,49 @@ const Balance = ({customer, payment}) => {
         </Text>
       </Text> */}
       {payment.paydate && (
-      <Text
-        style={[styles.textEstRepayment, {fontWeight: 'bold', fontFamily: 'UniformExtraCondensed-Light' }]}>
-        Est. repayment on{' '}
-        <Text style={[styles.textEstRepayment, {color: '#4FB0E6', fontFamily: 'UniformExtraCondensed-Light' }]}>
-          {formatDateNoTime(payment.paydate)}{' '}
-          <Text style={[styles.textEstRepayment, {fontWeight: 'bold', fontFamily: 'UniformExtraCondensed-Light' }]}>
-            Amount:{' '}
-            {new Intl.NumberFormat('en-GB', {
-              style: 'currency',
-              currency: 'AUD',
-            }).format(payment.amount / 100)}
-          </Text>
-        </Text>
-      </Text>
+        <View style={styles.viewTextAndButton}>
+          <View>
+            <Text
+              style={[
+                styles.textEstRepayment,
+                {fontFamily: 'UniformExtraCondensed-Light'},
+              ]}>
+              Next repayment:{' '}
+              <Text
+                style={[
+                  styles.textEstRepayment,
+                  {color: '#4FB0E6', fontFamily: 'UniformExtraCondensed-Light'},
+                ]}>
+                {formatDateNoTime(payment.paydate)}{' '}
+              </Text>
+            </Text>
+            <Text
+              style={[
+                styles.textEstRepayment,
+                {fontFamily: 'UniformExtraCondensed-Light'},
+              ]}>
+              <Text
+                style={[
+                  styles.textEstRepayment,
+                  {fontFamily: 'UniformExtraCondensed-Light'},
+                ]}>
+                Amount:{' '}
+                {new Intl.NumberFormat('en-GB', {
+                  style: 'currency',
+                  currency: 'AUD',
+                }).format(payment.amount / 100)}
+              </Text>
+            </Text>
+          </View>
+          <View style={styles.containerCenter}>
+            <Button
+              style={styles.button}
+              onPress={() => navigation.navigate('PaymentDetails', {payment})}
+              rounded>
+              <Text style={styles.textButton}>Pay Now</Text>
+            </Button>
+          </View>
+        </View>
       )}
     </View>
   );
@@ -97,6 +152,23 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 30,
   },
+  maincardAndroid: {
+    marginTop: -30,
+    shadowColor: '#000000',
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    shadowOffset: {
+      height: 1,
+      width: 1,
+    },
+    marginHorizontal: '5%',
+    borderRadius: 35,
+    backgroundColor: 'white',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderColor: '#000',
+    borderWidth: 1,
+  },
   card: {
     backgroundColor: 'rgba(255, 255, 255, 0.8)',
     borderRadius: 35,
@@ -105,7 +177,7 @@ const styles = StyleSheet.create({
     color: '#12293E',
     textTransform: 'uppercase',
     // fontWeight: 'bold',
-    fontFamily: 'Uniform-Condensed2'
+    fontFamily: 'Uniform-Condensed2',
   },
   progressBar: {
     height: 25,
@@ -149,8 +221,32 @@ const styles = StyleSheet.create({
   textEstRepayment: {
     color: '#5B6B79',
     fontSize: 14,
-    textAlign: 'center',
-    fontFamily: 'UniformExtraCondensed-Light'
+    marginBottom: 4,
+    textAlign: 'left',
+    fontFamily: 'UniformExtraCondensed-Light',
+  },
+  button: {
+    backgroundColor: '#4FB0E6',
+    marginTop: 10,
+    paddingHorizontal: 10,
+  },
+  textButton: {
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+    color: '#FFF',
+    fontFamily: 'UniformExtraCondensed-Light',
+  },
+  containerCenter: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  viewTextAndButton: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 });
 

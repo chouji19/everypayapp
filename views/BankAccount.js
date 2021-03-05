@@ -21,7 +21,6 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 import AsyncStorage from '@react-native-community/async-storage';
-import {Picker} from '@react-native-community/picker';
 import {StyleSheet} from 'react-native';
 import {
   getAccounts,

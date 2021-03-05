@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   form: {
-    marginTop: 60,
+    // marginTop: 60,
   },
   button: {
     backgroundColor: '#FFDD5F',
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     // fontWeight: '400',
     textAlign: 'center',
     fontSize: 18,
-    marginVertical: 20,
+    marginVertical: 10,
     fontFamily: 'UniformExtraCondensed-Light' 
 
   },

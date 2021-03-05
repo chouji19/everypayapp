@@ -70,8 +70,23 @@ const BankList = () => {
           />
           <Text style={styles.loginTittle}>Select your Bank</Text>
         </View>
+        <View style={styles.viewOptions}>
+          <Icon active name="eye-off-outline" style={styles.iconOptions} />
+          <Text style={styles.textUl}>We can not see your details</Text>
+        </View>
+        <View style={styles.viewOptions}>
+          <Icon active name="hand-right-outline" style={styles.iconOptions} />
+          <Text style={styles.textUl}>
+            We don't store your internet login details
+          </Text>
+        </View>
+        <View style={styles.viewOptions}>
+          <Icon active name="lock-closed-outline" style={styles.iconOptions} />
+          <Text style={styles.textUl}>The process is encrypted and secure</Text>
+        </View>
         {/* <ScrollView> */}
-        <Header searchBar rounded>
+        {/* <Header searchBar rounded> */}
+        <View border>
           <Item>
             <Icon name="ios-search" />
             <Input
@@ -81,16 +96,15 @@ const BankList = () => {
             />
             <Icon name="business" />
           </Item>
-          <Button transparent onPress={() => handleSearch()}>
-            <Text>Search</Text>
-          </Button>
-        </Header>
+        </View>
+        {/* </Header> */}
         <Form style={styles.form}>
           <View style={styles.formItem}>
             <Picker
               mode="dropdown"
               iosHeader="Frequency"
-              label='Bank selection'
+              label="Bank selection"
+              placeholder="Select one"
               value={selectedBank}
               style={globalStyles.combobox}
               iosIcon={
@@ -140,7 +154,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textTransform: 'uppercase',
     // fontWeight: 'bold',
-    fontFamily: 'Uniform-Condensed5'
+    fontFamily: 'Uniform-Condensed5',
   },
   form: {
     // marginTop: 60,
@@ -159,6 +173,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     marginHorizontal: '50%',
+    marginTop: -30
   },
   formItem: {
     display: 'flex',
@@ -167,6 +182,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     textTransform: 'uppercase',
+  },
+  iconOptions: {
+    // color: '#FFDD5F',
+    marginHorizontal: 5,
+    fontSize: 25,
+  },
+  viewOptions: {
+    flexDirection: 'row',
+    marginVertical: 3,
   },
 });
 

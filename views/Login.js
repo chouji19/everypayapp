@@ -241,10 +241,13 @@ const Login = () => {
 const styles = StyleSheet.create({
   loginTittle: {
     color: '#13293D',
-    fontSize: 30,
+    fontSize: 25,
     textTransform: 'uppercase',
     fontWeight: 'bold',
-    fontFamily: 'Uniform-Regular5'
+    fontFamily: 'Uniform-Regular5',
+    textAlign:  'center',
+    // fontFamily: 'Uniform-Condensed2'
+    // fontFamily: 'Uniform'
   },
   form: {
     marginTop: 60,

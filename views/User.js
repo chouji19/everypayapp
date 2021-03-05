@@ -21,7 +21,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet, Image, Linking} from 'react-native';
 import FooterMenu from '../components/FooterMenu';
 import LinearGradient from 'react-native-linear-gradient';
-import {Picker} from '@react-native-community/picker';
 import {getCustomerInfoAppBE, validateTokenBE} from '../services/BEServices';
 
 const User = () => {

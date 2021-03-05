@@ -27,6 +27,9 @@ import Validationcode from './views/Validationcode';
 import EndMessage from './views/EndMessage';
 import ForgotPassword from './views/ForgotPassword';
 import BankAccount from './views/BankAccount';
+import CardDetails from './views/CardDetails';
+import PaymentDetails from './views/PaymentDetails';
+import Summary from './views/Summary';
 
 
 
@@ -103,6 +106,7 @@ const App = () => {
                             component={CashBoost}
                             options={{
                                 headerShown: false,
+                                unmountOnBlur: true
                             }}
                         />
                         <Stack.Screen
@@ -139,6 +143,7 @@ const App = () => {
                             component={BankList}    
                             options={{
                                 tabBarVisible: false,
+                                unmountOnBlur: true
                             }}            
                         />
                         <Stack.Screen
@@ -148,7 +153,6 @@ const App = () => {
                                 headerShown: true,
                                 tabBarVisible: false,
                                 unmountOnBlur: true
-
                             }}            
                         />
                         <Stack.Screen
@@ -177,7 +181,30 @@ const App = () => {
                                 tabBarVisible: false,
                             }}            
                         />
-                        
+                        <Stack.Screen
+                            name='CardDetails'
+                            component={CardDetails}    
+                            options={{
+                                headerShown: true,
+                                tabBarVisible: true,
+                            }}            
+                        />
+                        <Stack.Screen
+                            name='PaymentDetails'
+                            component={PaymentDetails}    
+                            options={{
+                                headerShown: true,
+                                tabBarVisible: true,
+                            }}            
+                        />
+                        <Stack.Screen
+                            name='Summary'
+                            component={Summary}    
+                            options={{
+                                headerShown: true,
+                                tabBarVisible: true,
+                            }}            
+                        />
                         
                     </Stack.Navigator>
                             {/* <HomeTabs /> */}

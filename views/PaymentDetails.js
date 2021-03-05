@@ -10,6 +10,7 @@ import {
   Item,
   Toast,
   Icon,
+  Label,
 } from 'native-base';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
@@ -20,54 +21,73 @@ import {
   saveCustomer,
   saveCustomerBasiq,
   validateTokenBE,
+  getCustomerInfoAppBE,
 } from '../services/BEServices';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
-const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
+const PaymentDetails = ({route, navigation}) => {
+  const [postcode, setPostcode] = useState('');
+  const [city, setCity] = useState('');
+  const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState(null);
   const [validationCode, setValidationCode] = useState('');
 
-  const navigation = useNavigation();
+  const {payment} = route.params;
+
+
+  const [customer, setCustomer] = useState({});
+
+  useEffect(() => {
+    const loadInitialValues = async () => {
+      try {
+        const token = await AsyncStorage.getItem('tokenCustomer');
+        if (!token) {
+          navigation.navigate('Login');
+        } else {
+          const res = await validateTokenBE(token);
+          if (!res.success) {
+            navigation.navigate('Login');
+          }
+          const customers = await getCustomerInfoAppBE(token);
+          if (customers.success) {
+            setCustomer(customers.data.data.customer);
+            setAddress(
+              customers.data.data.customer.useraddress[0]
+                ? customers.data.data.customer.useraddress[0].addressLine1
+                : '',
+            );
+            setCity(
+              customers.data.data.customer.useraddress[0]
+                ? customers.data.data.customer.useraddress[0].city
+                : '',
+            );
+            setPostcode(
+              customers.data.data.customer.useraddress[0]
+                ? customers.data.data.customer.useraddress[0].postcode
+                : '',
+            );
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadInitialValues();
+  }, []);
 
   async function signuphandle() {
     try {
       if (
-        email.trim() === '' ||
-        surname.trim() === '' ||
-        name.trim() === '' ||
-        phone.trim() === ''
+        postcode.trim() === '' ||
+        address.trim() === '' ||
+        city.trim() === ''
       ) {
         setMessage('All fields are required');
         return;
       }
-      if (
-        await validateCustomerExist({
-          email,
-          phone,
-        })
-      ) {
-        setMessage('User already registered');
-        return;
-      }
-      const res = await saveCustomer({
-        firstname: name,
-        surname,
-        phone,
-        email,
-        agreepolicy: true,
-        agreetemrsuse: true,
-      });
-      const resBasiq = saveCustomerBasiq();
-      if (res.success) {
-        navigation.navigate('Income');
-      } else {
-        setMessage(res.error);
-      }
+      navigation.navigate('CardDetails', {details: {postcode, address, city}, payment});
     } catch (error) {
       console.error('There was an error with the login', error);
       setMessage('Error: Login failed please try again');
@@ -92,43 +112,25 @@ const Signup = () => {
               style={[styles.loginImage]}
               source={require('../assets/img/EverypayLogo.png')}
             />
-            <Text style={styles.loginTittle}>register to EverydayPay</Text>
-            <Text>
-              or{' '}
-              <Text
-                style={{color: '#4FB0E6'}}
-                onPress={() => navigation.navigate('Login')}>
-                Login
-              </Text>
-            </Text>
+            <Text style={styles.loginTittle}>Billing Info</Text>
           </View>
           <Form style={styles.form}>
             <Item inlineLabel last style={globalStyles.input} rounded>
+              <Label>City:</Label>
+              <Input onChangeText={(text) => setCity(text)} value={city} />
+            </Item>
+            <Item inlineLabel last style={globalStyles.input} rounded>
+              <Label>Address:</Label>
               <Input
-                placeholder="Name"
-                onChangeText={(text) => setName(text)}
-                value={name}
+                onChangeText={(text) => setAddress(text)}
+                value={address}
               />
             </Item>
             <Item inlineLabel last style={globalStyles.input} rounded>
+              <Label>Postcode:</Label>
               <Input
-                placeholder="Surname"
-                onChangeText={(text) => setSurname(text)}
-                value={surname}
-              />
-            </Item>
-            <Item inlineLabel last style={globalStyles.input} rounded>
-              <Input
-                placeholder="Email"
-                onChangeText={(text) => setEmail(text.toLowerCase())}
-                value={email}
-              />
-            </Item>
-            <Item inlineLabel last style={globalStyles.input} rounded>
-              <Input
-                placeholder="Phone"
-                onChangeText={(text) => setPhone(text)}
-                value={phone}
+                onChangeText={(text) => setPostcode(text.toLowerCase())}
+                value={postcode}
               />
             </Item>
             <View style={globalStyles.containerCenter}>
@@ -136,7 +138,7 @@ const Signup = () => {
                 style={styles.button}
                 onPress={() => signuphandle()}
                 rounded>
-                <Text style={styles.textButton}>Sign Up</Text>
+                <Text style={styles.textButton}>Continue</Text>
               </Button>
             </View>
 
@@ -154,7 +156,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textTransform: 'uppercase',
     fontWeight: 'bold',
-    fontFamily: 'Uniform-Regular5'
+    fontFamily: 'Uniform-Regular5',
   },
   form: {
     marginTop: 60,
@@ -168,7 +170,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     color: '#FFF',
-    fontFamily: 'Uniform-ExtraCondensed2'
+    fontFamily: 'Uniform-ExtraCondensed2',
   },
   loginImage: {
     width: 150,
@@ -178,4 +180,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Signup;
+export default PaymentDetails;

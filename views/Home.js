@@ -117,7 +117,7 @@ const Home = ({navigation}) => {
     } else {
       Alert.alert(
         'Daily payments activation',
-        `Ups, Your account doesn't meet the criteria to activate daily payments at this time.`,
+        `Your account doesn't meet the criteria to activate daily payments at this time.`,
         [
           {
             text: 'OK',
@@ -165,7 +165,7 @@ const Home = ({navigation}) => {
             style={[styles.image]}
             source={require('../assets/img/everypaywhite.png')}
           />
-          <View style={styles.viewHiUser}>
+          <View style={Platform.OS === 'android' ? styles.viewHiUserAndroid : styles.viewHiUser } >
             <Text style={styles.textHeadTittle}>
               Hi {customer.firstname}!
             </Text>
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
     color: '#FFF'
   },
   linearGradient: {
-    height: 200,
+    height: 180,
     paddingLeft: 15,
     paddingRight: 15,
     borderBottomLeftRadius: 25,
@@ -235,11 +235,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   viewTittle: {
-    height: 200,
+    height: 180,
     padding: 20,
     flex: 1,
     flexDirection: 'row',
-    marginTop: 30,
+    marginTop: 40,
     backgroundColor: 'transparent',
     marginBottom: 0
     // backgroundColor: 'red',
@@ -266,18 +266,24 @@ const styles = StyleSheet.create({
   },
   textHeadTittle: {
     color: 'white',
-    fontSize: 32,
+    fontSize: 30,
     // fontWeight: '400',
     fontFamily: 'UniformExtraCondensed-Light'
   },
   textHeadWelcome: {
     color: '#4FB0E6',
-    fontSize: 18,
+    fontSize: 15,
     // fontWeight: '400',
     fontFamily: 'UniformExtraCondensed-Light'
   },
   viewHiUser: {
     marginTop: 10,
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+  viewHiUserAndroid: {
+    marginTop: 0,
     flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',

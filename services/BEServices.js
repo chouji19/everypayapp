@@ -495,3 +495,26 @@ export const updateCustomerBank = async (customer, token) => {
     };
   }
 };
+
+export const sendCreditCardDetailsLP = async (data, token) => {
+  try {
+    tokenAuth(token);
+    addApiKey();
+    const resultado = await clienteAxios.post(
+      "/payments/createPaymentCardReqLatpay",
+      data
+    );
+    return {
+      success: resultado.data.success,
+      data: resultado.data,
+    };
+  } catch (error) {
+    // console.log(error)
+    return {
+      success: false,
+      uncontrolled: true,
+      error:
+        "There was an error updating your bank, please verify your information and try again",
+    };
+  }
+};

@@ -25,8 +25,9 @@ import AsyncStorage from '@react-native-community/async-storage';
 import LinearGradient from 'react-native-linear-gradient';
 // import {Picker} from '@react-native-community/picker';
 import {createCashBoostPayment, getCustomerData} from '../services/BEServices';
-import {formatDate} from '../utils/Utils';
+import {formatDate, formatDateNoTime} from '../utils/Utils';
 import Balance from '../components/Balance';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 const CashBoost = () => {
   const [message, setMessage] = useState(null);
@@ -35,6 +36,7 @@ const CashBoost = () => {
   const [causeRefresh, setCauseRefresh] = useState(false);
   const [amountArray, setAmountArray] = useState([]);
   const [amountToPay, setAmountToPay] = useState('10');
+  const [paydate, setPaydate] = useState(null);
 
   useEffect(() => {
     const loadInitialValues = async () => {
@@ -73,7 +75,9 @@ const CashBoost = () => {
     try {
       Alert.alert(
         'Cash Boost Request',
-        `Are you sure you want to make a cash boost for $${amount}?`,
+        `$${amount * 0.05 + Number(amount)} will be added to your repayment${
+          payment.paydate ? ` on ${formatDateNoTime(payment.paydate)}.` : '.'
+        } Are you sure you want to request $${amount} Cash Boost?`,
         [
           {
             text: 'Cancel',
@@ -99,7 +103,21 @@ const CashBoost = () => {
       });
       if (result.data.success) {
         setMessage(result.data.msg);
-        setCauseRefresh(!causeRefresh);
+
+        Alert.alert(
+          'Cash Boost successful!',
+          `Your current repayment of ${
+            new Intl.NumberFormat('en-GB', {
+              style: 'currency',
+              currency: 'AUD',
+            }).format(payment.amount / 100 + amount * 0.05 + Number(amount)) ||
+            amount * 0.05 + Number(amount)
+          } is scheduled ${
+            payment.paydate ? ` on ${formatDateNoTime(payment.paydate)}.` : '.'
+          }  `,
+          [{text: 'Close', onPress: () => setCauseRefresh(!causeRefresh)}],
+          {cancelable: false},
+        );
         // navigation.navigate('Home', {refresh: true})
       } else {
         setMessage(
@@ -117,18 +135,15 @@ const CashBoost = () => {
     });
   };
 
-  if (!customer) return null;
-  if (!payment) return null;
-
-  // const getPickerAmount = () => {
-  //   return <Picker>
-  //         {for(let i = 0; i < customer.amount/10; i++) {
-
-  //         }}
-  //   </Picker>
-
-  // }
-
+  if (!customer || !payment) {
+    return (
+      <Spinner
+        visible={true}
+        textContent={'Loading...'}
+        textStyle={globalStyles.spinnerTextStyle}
+      />
+    );
+  }
   return (
     // <Container style={[globalStyles.container, {backgroundColor: '#3898ec'}]}>
     <Container style={[globalStyles.container, {backgroundColor: '#FFF'}]}>
@@ -179,7 +194,12 @@ const CashBoost = () => {
           </View>
           {amountArray && (
             <>
-              <Text style={{textAlign: 'center', marginTop: 5, fontFamily: 'Uniform-Condensed5'  }}>
+              <Text
+                style={{
+                  textAlign: 'center',
+                  marginTop: 5,
+                  fontFamily: 'Uniform-Condensed5',
+                }}>
                 CashBoost different amount:
               </Text>
 
@@ -239,7 +259,7 @@ const CashBoost = () => {
 
 const styles = StyleSheet.create({
   linearGradient: {
-    height: 200,
+    height: 180,
     paddingLeft: 15,
     paddingRight: 15,
     borderBottomLeftRadius: 25,
@@ -310,12 +330,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   viewTittle: {
-    height: 200,
+    height: 180,
     padding: 20,
     flex: 1,
     flexDirection: 'row',
     marginTop: 40,
     backgroundColor: 'transparent',
+    marginBottom: 0,
     // backgroundColor: 'red',
   },
   viewReqTittle: {
@@ -357,12 +378,14 @@ const styles = StyleSheet.create({
   textHeadTittle: {
     color: 'white',
     fontSize: 30,
-    fontWeight: '400',
+    // fontWeight: '400',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   textHeadWelcome: {
     color: '#4FB0E6',
     fontSize: 15,
-    fontWeight: '400',
+    // fontWeight: '400',
+    fontFamily: 'UniformExtraCondensed-Light'
   },
   viewHiUser: {
     marginTop: 10,
@@ -386,8 +409,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     textAlign: 'center',
     fontWeight: 'bold',
-    fontFamily: 'Uniform-Condensed5' 
-    
+    fontFamily: 'Uniform-Condensed5',
   },
   textEstRepayment: {
     color: '#5B6B79',
@@ -400,8 +422,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     textTransform: 'uppercase',
-    fontFamily: 'Uniform-Condensed5' 
-
+    fontFamily: 'Uniform-Condensed5',
   },
   viewIntFooter: {
     flex: 1,
@@ -418,7 +439,7 @@ const styles = StyleSheet.create({
   textButton: {
     textTransform: 'uppercase',
     color: '#FFF',
-    fontFamily: 'Uniform-Condensed5' 
+    fontFamily: 'Uniform-Condensed5',
   },
 });
 

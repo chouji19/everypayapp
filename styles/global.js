@@ -8,7 +8,7 @@ const globalStyles = StyleSheet.create({
   content: {
     flexDirection: 'column',
     justifyContent: 'center',
-    marginHorizontal: '2.5%',
+    marginHorizontal: '3.5%',
     flex: 1,
   },
   contentHome: {
@@ -27,7 +27,7 @@ const globalStyles = StyleSheet.create({
   },
   input: {
     backgroundColor: '#FFF',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   button: {
     backgroundColor: '#28303B',
@@ -67,6 +67,7 @@ const globalStyles = StyleSheet.create({
     marginBottom: 20,
   },
   containerCenter: {
+    flex: 0,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -119,6 +120,15 @@ const globalStyles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
   },
+  datepicker: {
+    height: 50,
+    fontSize: 30,
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    width: '100%',
+    color: '#A00'
+  },
+  
 });
 
 export default globalStyles;

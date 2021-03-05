@@ -99,7 +99,6 @@ export const FooterHelpButton = ({size, square, color}) => {
 };
 
 export const FooterTransactionsButton = ({color}) => {
-  console.log(color);
   return (
     <View
       style={[

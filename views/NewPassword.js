@@ -15,9 +15,9 @@ import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../styles/global';
 import AsyncStorage from '@react-native-community/async-storage';
 import {StyleSheet} from 'react-native';
-import {
-  updateCustomerPassword
-} from '../services/BEServices';
+import {updateCustomerPassword} from '../services/BEServices';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 
 const NewPassword = () => {
   const [email, setEmail] = useState('your.email+fakedata63101@gmail.com');
@@ -25,11 +25,9 @@ const NewPassword = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [message, setMessage] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false)
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
 
   const navigation = useNavigation();
-
-  
 
   async function passwordFormHandle() {
     try {
@@ -46,7 +44,7 @@ const NewPassword = () => {
       if (!password.match(lowerCaseLetters)) {
         setMessage('Password debe contener al menos una letra a-z');
         return;
-      } 
+      }
       if (password.length < 6) {
         setMessage('password must contain at least 6 characters');
         return;
@@ -81,52 +79,60 @@ const NewPassword = () => {
     // <Container style={[globalStyles.container, {backgroundColor: '#3898ec'}]}>
     <Container style={[globalStyles.container, {backgroundColor: '#ECFFFF'}]}>
       <View style={globalStyles.content}>
-        <View style={[globalStyles.containerMain, {marginHorizontal: 10}]}>
-          <Text style={styles.passTittle}>Please insert your new password</Text>
-          <Text note style={styles.passNote}>
-            the password must contain at least 6 characters including numbers
-            and letters
-          </Text>
-        </View>
-        <Form style={styles.form}>
-          <Item inlineLabel last style={globalStyles.input} rounded>
-            <Icon active name="lock-closed-outline" />
-            <Input
-              secureTextEntry={showPassword ? false : true}
-              placeholder="Password"
-              onChangeText={(texto) => setPassword(texto)}
+        <KeyboardAwareScrollView>
+          <View style={[globalStyles.containerMain, {marginHorizontal: 10}]}>
+          <Image
+              style={[styles.loginImage]}
+              source={require('../assets/img/EverypayLogo.png')}
             />
-            <Icon
-              active
-              name={showPassword ? 'eye-off-outline' : 'eye-outline'}
-              onPress={() => setShowPassword(!showPassword)}
-              style={{marginRight: 5}}
-            />
-          </Item>
-          <Item inlineLabel last style={globalStyles.input} rounded>
-            <Icon active name="lock-closed-outline" />
-            <Input
-              secureTextEntry={showRepeatPassword ? false : true}
-              placeholder="Repeat Password"
-              onChangeText={(texto) => setRepeatPassword(texto)}
-            />
-            <Icon
-              active
-              name={showPassword ? 'eye-off-outline' : 'eye-outline'}
-              onPress={() => setShowRepeatPassword(!showRepeatPassword)}
-              style={{marginRight: 5}}
-            />
-          </Item>
-          <View style={globalStyles.containerCenter}>
-            <Button
-              style={styles.button}
-              onPress={() => passwordFormHandle()}
-              rounded>
-              <Text style={styles.textButton}>Update password</Text>
-            </Button>
+            <Text style={styles.passTittle}>
+              Please insert your new password
+            </Text>
+            <Text note style={styles.passNote}>
+              the password must contain at least 6 characters including numbers
+              and letters
+            </Text>
           </View>
-          {message && showAlert()}
-        </Form>
+          <Form style={styles.form}>
+            <Item inlineLabel last style={globalStyles.input} rounded>
+              <Icon active name="lock-closed-outline" />
+              <Input
+                secureTextEntry={showPassword ? false : true}
+                placeholder="Password"
+                onChangeText={(texto) => setPassword(texto)}
+              />
+              <Icon
+                active
+                name={showPassword ? 'eye-off-outline' : 'eye-outline'}
+                onPress={() => setShowPassword(!showPassword)}
+                style={{marginRight: 5}}
+              />
+            </Item>
+            <Item inlineLabel last style={globalStyles.input} rounded>
+              <Icon active name="lock-closed-outline" />
+              <Input
+                secureTextEntry={showRepeatPassword ? false : true}
+                placeholder="Repeat Password"
+                onChangeText={(texto) => setRepeatPassword(texto)}
+              />
+              <Icon
+                active
+                name={showPassword ? 'eye-off-outline' : 'eye-outline'}
+                onPress={() => setShowRepeatPassword(!showRepeatPassword)}
+                style={{marginRight: 5}}
+              />
+            </Item>
+            <View style={globalStyles.containerCenter}>
+              <Button
+                style={styles.button}
+                onPress={() => passwordFormHandle()}
+                rounded>
+                <Text style={styles.textButton}>Update password</Text>
+              </Button>
+            </View>
+            {message && showAlert()}
+          </Form>
+        </KeyboardAwareScrollView>
       </View>
     </Container>
   );
@@ -158,7 +164,7 @@ const styles = StyleSheet.create({
   loginImage: {
     width: 150,
     height: 150,
-    marginHorizontal: '50%',
+    marginTop: 120,
   },
 });
 
